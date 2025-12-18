@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import { Annotation } from '@langchain/langgraph';
 import { DeviceInfo } from '../../../mobile';
+import { AppMobileTrace } from '../middleware/AppMobileTrace.js';
 
 /**
  * Zod schema for DeviceInfo
@@ -19,7 +20,25 @@ export const DeviceInfoSchema = z.object({
 export const contextMobileSchema = z.object({
   deviceInfo: DeviceInfoSchema,
   bibleData: z.string(),
+  appMobileTrace: z.instanceof(AppMobileTrace).optional(),
   currentScreenWindow: z.string().optional(),
+  authorizedApps: z
+    .array(
+      z.object({
+        name: z.string(),
+        identifier: z.string(),
+      })
+    )
+    .optional(),
+  appTimeline: z
+    .array(
+      z.object({
+        name: z.string(),
+        last_used: z.date().optional(),
+        current_session_start: z.date().optional(),
+      })
+    )
+    .optional(),
 });
 
 export type DeviceContextType = z.infer<typeof DeviceInfoSchema>;
@@ -34,7 +53,18 @@ export const MobileContextAnnotation = Annotation.Root({
   bibleData: Annotation<string>({
     reducer: (prev, next) => next ?? prev,
   }),
+  appMobileTrace: Annotation<AppMobileTrace>({
+    reducer: (prev, next) => next ?? prev,
+  }),
   currentScreenWindow: Annotation<string>({
+    reducer: (prev, next) => next ?? prev,
+  }),
+  authorizedApps: Annotation<{ name: string; identifier: string }[]>({
+    reducer: (prev, next) => next ?? prev,
+  }),
+  appTimeline: Annotation<
+    { name: string; last_used?: Date; current_session_start?: Date }[]
+  >({
     reducer: (prev, next) => next ?? prev,
   }),
 });

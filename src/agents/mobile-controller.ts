@@ -21,12 +21,14 @@ import { SubAgent } from './deepagents/index.js';
 import {
   TWITTER_TASK_SUBAGENT_PROMPT,
   DEEPAGENTS_SYSTEM_PROMPT,
+  INSTAGRAM_TASK_SUBAGENT_PROMPT,
 } from '../prompts/agents/deepagents.prompt.js';
 import { MobileContextAnnotation } from './deepagents/types/index.js';
 import {
   deviceCheckMiddleware,
-  deviceContextEnvironementMiddleware,
+  devicePromptMiddleware,
 } from './deepagents/middleware/devices.js';
+import { AppMobileTrace } from './deepagents/middleware/AppMobileTrace.js';
 import { createReverseSwipeMiddleware } from './deepagents/middleware/reverse_swipe.js';
 
 export class MobileControllerGraph {
@@ -48,6 +50,9 @@ export class MobileControllerGraph {
   selectedDevices: DeviceInfo | null = null;
 
   selectedBible: any = null;
+
+  appMobileTrace: AppMobileTrace | null = null;
+
   constructor() {
     if (!process.env.GEMINI_API_KEY) {
       throw new Error('GEMINI_API_KEY is not set in environment variables');
@@ -94,11 +99,9 @@ export class MobileControllerGraph {
     const tools = mcpsIngester.getTools();
     const filterTools = tools.filter(
       tool =>
-        tool.name != 'mobile_list_available_devices' &&
         tool.name != 'mobile_take_screenshot' &&
         tool.name != 'mobile_save_screenshot' &&
-        tool.name != 'mobile_list_elements_on_screen' &&
-        tool.name != 'mobile_list_available_devices'
+        tool.name != 'mobile_list_elements_on_screen'
     );
     this.mobileController = new MobileControler(tools);
     const devices = await this.mobileController.getDevices();
@@ -116,9 +119,7 @@ export class MobileControllerGraph {
     this.selectedBible = await selectBible();
 
     const deviceCheckMiddlewares = deviceCheckMiddleware(this.mobileController);
-    const deviceContextEnvironement = deviceContextEnvironementMiddleware(
-      this.mobileController
-    );
+    const devicePromptMiddlewareInstance = devicePromptMiddleware();
     const todoListMiddleware = createReverseSwipeMiddleware();
     console.log(`Selected Bible: ${this.selectedBible.name}`);
 
@@ -138,19 +139,45 @@ export class MobileControllerGraph {
       systemPrompt: twitterSubAgentPrompt,
       middleware: [
         deviceCheckMiddlewares,
-        deviceContextEnvironement,
+        devicePromptMiddlewareInstance,
         // todoListMiddleware,
       ],
 
       tools: filterTools,
       model: this.model,
     };
+
+    const instagramSubAgent: SubAgent = {
+      name: 'InstagramSubAgent',
+      description:
+        'Handles Instagram related execution tasks on the mobile device',
+      systemPrompt: INSTAGRAM_TASK_SUBAGENT_PROMPT,
+      middleware: [
+        deviceCheckMiddlewares,
+        devicePromptMiddlewareInstance,
+        // todoListMiddleware,
+      ],
+      tools: filterTools,
+      model: this.model,
+    };
+
+    const authorizedApps = [{ name: 'X', identifier: 'com.twitter.android' }, { name: 'Instagram', identifier: 'com.instagram.android' }];
+
+    // Initialize AppMobileTrace for tracking app usage
+    this.appMobileTrace = new AppMobileTrace(
+      this.mobileController,
+      this.selectedDevices.id,
+      authorizedApps
+    );
+
     const deepAgentPrompt = await formatPromptWithDevice(
       DEEPAGENTS_SYSTEM_PROMPT,
       this.selectedDevices,
       ['X', 'twitter'],
       {
         bible: bibleToPromptString(this.selectedBible),
+        subagentsList:
+          'TwitterSubAgent :Handles Twitter related execution tasks on the mobile device ',
       }
     );
     this.agent = createDeepAgent({
@@ -159,10 +186,10 @@ export class MobileControllerGraph {
       systemPrompt: deepAgentPrompt,
       middleware: [
         deviceCheckMiddlewares,
-        deviceContextEnvironement,
+        devicePromptMiddlewareInstance,
         // todoListMiddleware,
       ],
-      subagents: [twitterSubAgent],
+      subagents: [twitterSubAgent, instagramSubAgent],
       contextSchema: MobileContextAnnotation,
     });
   }
@@ -185,8 +212,9 @@ export class MobileControllerGraph {
           context: {
             deviceInfo: this.selectedDevices,
             bibleData: bibleToPromptString(this.selectedBible),
+            appMobileTrace: this.appMobileTrace,
           },
-          recursionLimit: 100,
+          recursionLimit: 200,
         }
       );
       console.log('Agent response:', response);

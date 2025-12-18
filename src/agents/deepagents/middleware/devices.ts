@@ -3,7 +3,7 @@ import { MobileControler } from '../../../mobile';
 import { contextMobileSchema } from '../types/index.js';
 import { PromptTemplate } from '@langchain/core/prompts';
 import { ENVIRONMENT_PROMPT_INFO } from '../../../prompts/agents/deepagents.prompt.js';
-import type { z } from 'zod';
+import { AppMobileTrace } from './AppMobileTrace.js';
 
 export const deviceCheckMiddleware = (mobileController: MobileControler) => {
   return createMiddleware({
@@ -64,31 +64,26 @@ async function waitForDevices(
   }
 }
 
-export const deviceContextEnvironementMiddleware = (
-  mobileController: MobileControler
-) => {
+/**
+ * Middleware to enhance system prompt with device context
+ * Uses AppMobileTrace class instance to dynamically update and format device/app information
+ */
+export function devicePromptMiddleware(): ReturnType<typeof createMiddleware> {
   return createMiddleware({
-    name: 'deviceContextEnvironementMiddleware',
+    name: 'devicePromptMiddleware',
     contextSchema: contextMobileSchema,
     wrapModelCall: async (request, handler) => {
       // Access context from runtime
-      const { deviceInfo, bibleData } = request.runtime.context;
+      const { deviceInfo, bibleData, appMobileTrace } = request.runtime.context;
 
       if (!deviceInfo || !bibleData) {
-        console.warn('⚠️ Missing context data in userContextMiddleware');
+        console.warn('⚠️ Missing context data in devicePromptMiddleware');
         return handler(request);
       }
 
-      // Try to get screen elements, but handle errors gracefully
-      try {
-        request.runtime.context.currentScreenWindow =
-          await mobileController.getScreenElements(deviceInfo.id);
-      } catch (error) {
-        console.error(
-          '❌ Error fetching screen elements, continuing without screen data:',
-          error instanceof Error ? error.message : String(error)
-        );
-        request.runtime.context.currentScreenWindow = 'Screen data unavailable';
+      // Check if appMobileTrace exists and update its state
+      if (appMobileTrace && appMobileTrace instanceof AppMobileTrace) {
+        await appMobileTrace.updateState();
       }
 
       // Create prompt template
@@ -106,10 +101,16 @@ export const deviceContextEnvironementMiddleware = (
           'authorizedApps',
           'bible',
           'currentWindow',
+          'appTimeline',
         ],
       });
 
       // Format the prompt with context values
+      console.log('📋 Formatting prompt with appMobileTrace');
+
+      const currentWindow = appMobileTrace?.getCurrentScreenWindow() || 'No screen data available';
+      const formattedTimeline = appMobileTrace?.getFormattedAppTimeline() || 'No app usage data available yet.';
+
       const formattedPrompt = await prompt.format({
         id: deviceInfo.id,
         name: deviceInfo.name,
@@ -121,17 +122,18 @@ export const deviceContextEnvironementMiddleware = (
         screenHeight: deviceInfo.screenHeight?.toString() || 'unknown',
         authorizedApps: 'X, Twitter', // TODO: Make this configurable
         bible: bibleData,
-        currentWindow:
-          request.runtime.context.currentScreenWindow ||
-          'No screen data available',
+        currentWindow: currentWindow,
+        appTimeline: formattedTimeline,
       });
 
-      const newSystemMessage = request.systemMessage.concat(formattedPrompt);
+      console.log('✅ Formatted prompt length:', formattedPrompt.length);
+      console.log('📝 Original systemMessage type:', typeof request.systemMessage);
 
+      const newSystemMessage = request.systemMessage.concat(formattedPrompt);
       return handler({
         ...request,
         systemMessage: newSystemMessage,
       });
     },
   });
-};
+}

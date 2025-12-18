@@ -4,8 +4,6 @@ import { DeviceInfo } from '../mobile';
 // Export prompt formatting utilities
 export {
   formatPromptWithDevice,
-  formatMultiplePrompts,
-  formatPromptWithDeviceSync,
   type DeviceEnvironment,
 } from './prompt-formatter.js';
 
