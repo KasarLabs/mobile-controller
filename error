@@ -1,0 +1,3 @@
+[2025-12-18T11:31:42.859Z] INFO mobile-mcp server running on stdio
+[2025-12-18T11:31:42.908Z] INFO Invoking mobile_list_available_devices with args: {"noParams":{}}
+[2025-12-18T11:31:43.010Z] INFO => {"devices":[]}

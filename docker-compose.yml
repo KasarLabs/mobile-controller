@@ -1,0 +1,53 @@
+services:
+  postgres:
+    image: pgvector/pgvector:pg17
+    container_name: 'postgres'
+    shm_size: 1g
+    env_file:
+      - path: .env
+        required: true
+    ports:
+      - 5455:5432
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    restart: unless-stopped
+    networks:
+      - mobile-ai-controller
+
+  # backend:
+  #   build:
+  #     context: .
+  #     dockerfile: backend.dockerfile
+  #   container_name: 'cairo-coder-backend'
+  #   env_file:
+  #     - path: .env
+  #       required: true
+  #   ports:
+  #     - 3001:3001
+  #   depends_on:
+  #     postgres:
+  #       condition: service_started
+  #   restart: unless-stopped
+  #   networks:
+  #     -
+
+  ingester:
+    platform: linux/amd64
+    container_name: 'mobile-ai-controller-ingester'
+    env_file:
+      - path: .env
+        required: true
+    build:
+      context: .
+      dockerfile: ingester.dockerfile
+    depends_on:
+      postgres:
+        condition: service_started
+    networks:
+      - mobile-ai-controller
+
+networks:
+  mobile-ai-controller:
+
+volumes:
+  postgres_data:
