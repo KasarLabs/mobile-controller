@@ -69,7 +69,7 @@ export function addSectionWithSizeLimit(
   title: string,
   content: string,
   maxSize: number = MAX_SECTION_SIZE,
-  anchor?: string,
+  anchor?: string
 ): void {
   if (content.length <= maxSize) {
     sections.push({ title, content, anchor });

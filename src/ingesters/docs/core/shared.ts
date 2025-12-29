@@ -37,29 +37,29 @@ export function isInsideCodeBlock(content: string, index: number): boolean {
 
 export function findChunksToUpdateAndRemove(
   freshChunks: Document<Record<string, any>>[],
-  storedChunkHashes: { uniqueId: string; contentHash: string }[],
+  storedChunkHashes: { uniqueId: string; contentHash: string }[]
 ): {
   chunksToUpdate: Document<Record<string, any>>[];
   chunksToRemove: string[];
 } {
   const storedHashesMap = new Map(
-    storedChunkHashes.map((chunk) => [chunk.uniqueId, chunk.contentHash]),
+    storedChunkHashes.map(chunk => [chunk.uniqueId, chunk.contentHash])
   );
   const freshChunksMap = new Map(
-    freshChunks.map((chunk) => [
+    freshChunks.map(chunk => [
       chunk.metadata.uniqueId,
       chunk.metadata.contentHash,
-    ]),
+    ])
   );
 
-  const chunksToUpdate = freshChunks.filter((chunk) => {
+  const chunksToUpdate = freshChunks.filter(chunk => {
     const storedHash = storedHashesMap.get(chunk.metadata.uniqueId);
     return storedHash !== chunk.metadata.contentHash;
   });
 
   const chunksToRemove = storedChunkHashes
-    .filter((stored) => !freshChunksMap.has(stored.uniqueId))
-    .map((stored) => stored.uniqueId);
+    .filter(stored => !freshChunksMap.has(stored.uniqueId))
+    .map(stored => stored.uniqueId);
 
   return { chunksToUpdate, chunksToRemove };
 }

@@ -106,7 +106,7 @@ export class VectorStore {
 
   static async getInstance(
     config: VectorStoreConfig,
-    embeddings: Embeddings,
+    embeddings: Embeddings
   ): Promise<VectorStore> {
     if (VectorStore.instance) {
       return VectorStore.instance;
@@ -134,7 +134,7 @@ export class VectorStore {
           min: 5,
         });
 
-        pool.on('error', (err) => {
+        pool.on('error', err => {
           logger.error('Postgres pool error:', err);
         });
 
@@ -144,7 +144,7 @@ export class VectorStore {
         const newInstance = new VectorStore(
           pool,
           embeddings,
-          config.POSTGRES_TABLE_NAME,
+          config.POSTGRES_TABLE_NAME
         );
         await newInstance.initializeDb();
 
@@ -222,7 +222,7 @@ export class VectorStore {
   async similaritySearch(
     query: string,
     k: number = 5,
-    sources?: DocumentSource | DocumentSource[],
+    sources?: DocumentSource | DocumentSource[]
   ): Promise<DocumentInterface[]> {
     try {
       // Generate embedding for the query
@@ -264,7 +264,7 @@ export class VectorStore {
         const result = await client.query(sql, values);
 
         // Convert to DocumentInterface format
-        return result.rows.map((row) => ({
+        return result.rows.map(row => ({
           pageContent: row.content,
           metadata: row.metadata,
         }));
@@ -285,7 +285,7 @@ export class VectorStore {
    */
   async addDocuments(
     documents: DocumentInterface[],
-    options?: { ids?: string[] },
+    options?: { ids?: string[] }
   ): Promise<void> {
     logger.info(`Adding ${documents.length} documents to the vector store`);
 
@@ -304,7 +304,7 @@ export class VectorStore {
 
       // Process all batches
       const batchEmbeddings = await Promise.all(
-        documentBatches.map((batch) => this.embeddings.embedDocuments(batch)),
+        documentBatches.map(batch => this.embeddings.embedDocuments(batch))
       );
 
       // Merge all embeddings
@@ -363,7 +363,7 @@ export class VectorStore {
    */
   async updateDocumentsMetadata(
     documents: DocumentInterface[],
-    options?: { ids?: string[] },
+    options?: { ids?: string[] }
   ): Promise<void> {
     if (documents.length === 0) return;
 
@@ -415,7 +415,7 @@ export class VectorStore {
       try {
         const result = await client.query(
           `SELECT content, metadata, contentHash FROM ${this.tableName} WHERE uniqueId = $1`,
-          [name],
+          [name]
         );
 
         if (result.rows.length > 0) {
@@ -447,7 +447,7 @@ export class VectorStore {
    */
   async removeBookPages(
     uniqueIds: string[],
-    source: DocumentSource,
+    source: DocumentSource
   ): Promise<void> {
     if (uniqueIds.length === 0) return;
 
@@ -487,10 +487,10 @@ export class VectorStore {
       try {
         const result = await client.query(
           `SELECT uniqueId, metadata FROM ${this.tableName} WHERE source = $1`,
-          [source],
+          [source]
         );
 
-        return result.rows.map((row) => ({
+        return result.rows.map(row => ({
           uniqueId: row.uniqueid,
           metadata: row.metadata || {},
         }));

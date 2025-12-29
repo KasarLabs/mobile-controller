@@ -42,7 +42,6 @@ export interface DeviceEnvironment extends DeviceInfo {
 export async function formatPromptWithDevice(
   promptTemplate: string,
   deviceInfo: DeviceEnvironment,
-  authorizedApps: string[],
   additionalValues: Record<string, any> = {}
 ): Promise<string> {
   // Extract all variable names from the template
@@ -75,7 +74,6 @@ export async function formatPromptWithDevice(
     state: deviceInfo.state,
     screenWidth: deviceInfo.screenWidth ?? 'unknown',
     screenHeight: deviceInfo.screenHeight ?? 'unknown',
-    authorizedApps: authorizedApps.join(', '),
     // Additional values (can override device info if needed)
     ...additionalValues,
   };

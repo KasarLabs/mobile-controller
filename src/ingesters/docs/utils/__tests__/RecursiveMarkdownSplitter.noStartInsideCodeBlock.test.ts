@@ -1,7 +1,7 @@
 import { RecursiveMarkdownSplitter } from '../RecursiveMarkdownSplitter';
 
 function getCodeBlockRanges(
-  text: string,
+  text: string
 ): Array<{ start: number; end: number }> {
   const ranges: Array<{ start: number; end: number }> = [];
   const re = /```[\s\S]*?```/g;
@@ -14,16 +14,16 @@ function getCodeBlockRanges(
 
 function isInside(
   pos: number,
-  ranges: Array<{ start: number; end: number }>,
+  ranges: Array<{ start: number; end: number }>
 ): boolean {
-  return ranges.some((r) => pos > r.start && pos < r.end);
+  return ranges.some(r => pos > r.start && pos < r.end);
 }
 
 describe('RecursiveMarkdownSplitter - No chunk starts inside code block', () => {
   it('ensures chunk starts are never within fenced code blocks even with overlap', () => {
     const longCode = Array.from(
       { length: 60 },
-      (_, i) => `line ${i} of code`,
+      (_, i) => `line ${i} of code`
     ).join('\n');
     const md = `# Section One\n\nIntro paragraph text that will be part of the first section.\n\n\n## Subsection\n\nSome text before a large code block.\n\n
 \`\`\`cairo
@@ -52,7 +52,7 @@ After the code block there is trailing text to encourage multiple segments and o
     const codeBlockMaxChars = 400;
     for (const c of chunks) {
       const pos = c.meta.startChar;
-      const insideRanges = ranges.filter((r) => pos > r.start && pos < r.end);
+      const insideRanges = ranges.filter(r => pos > r.start && pos < r.end);
       if (insideRanges.length === 0) continue;
       // If inside a code block, only allow if that block is oversized (breakable)
       const smallest = insideRanges.reduce((acc, r) => {

@@ -116,7 +116,9 @@ export async function selectBible(
     console.log(`${index + 1}. ${bible.name}`);
     console.log(`   Bio:       ${bible.bio}`);
     console.log(`   Style:     ${bible.style}`);
-    console.log(`   Interests: ${bible.interests.slice(0, 3).join(', ')}${bible.interests.length > 3 ? '...' : ''}`);
+    console.log(
+      `   Interests: ${bible.interests.slice(0, 3).join(', ')}${bible.interests.length > 3 ? '...' : ''}`
+    );
     console.log('');
   });
 

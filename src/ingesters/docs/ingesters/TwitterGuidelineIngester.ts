@@ -38,7 +38,10 @@ export class TwitterGuidelineIngester extends MarkdownIngester {
    * @returns string - Path to the local docs directory
    */
   protected getExtractDir(): string {
-    return path.resolve(process.cwd(), TwitterGuidelineIngester.LOCAL_DOCS_PATH);
+    return path.resolve(
+      process.cwd(),
+      TwitterGuidelineIngester.LOCAL_DOCS_PATH
+    );
   }
 
   /**
@@ -57,7 +60,7 @@ export class TwitterGuidelineIngester extends MarkdownIngester {
       await fs.access(docsDir);
     } catch (error) {
       throw new Error(
-        `Local Twitter guidelines directory not found: ${docsDir}. Please create it and add markdown files.`,
+        `Local Twitter guidelines directory not found: ${docsDir}. Please create it and add markdown files.`
       );
     }
 
@@ -66,12 +69,12 @@ export class TwitterGuidelineIngester extends MarkdownIngester {
 
     if (pages.length === 0) {
       logger.warn(
-        `No markdown files found in ${docsDir}. Please add .md or .mdx files.`,
+        `No markdown files found in ${docsDir}. Please add .md or .mdx files.`
       );
     }
 
     logger.info(
-      `Processed ${pages.length} documentation pages from Twitter Guidelines`,
+      `Processed ${pages.length} documentation pages from Twitter Guidelines`
     );
 
     return pages;

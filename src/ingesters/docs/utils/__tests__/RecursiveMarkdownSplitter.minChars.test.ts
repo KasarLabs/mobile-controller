@@ -50,7 +50,7 @@ This section is also substantial with a good amount of content that would exceed
     // Should not merge if combined length would exceed maxChars significantly
     // With the 1.5x flexibility for final chunks, they might merge if total < 150 chars
     // Let's verify chunks are reasonably sized
-    chunks.forEach((chunk) => {
+    chunks.forEach(chunk => {
       expect(chunk.content.length).toBeLessThanOrEqual(150); // 1.5x maxChars
     });
 
@@ -95,7 +95,7 @@ The \`Display\` trait is used for standard formatting.`;
     expect(chunks.length).toBeLessThanOrEqual(2);
 
     // Each chunk should be meaningful in size
-    chunks.forEach((chunk) => {
+    chunks.forEach(chunk => {
       expect(chunk.content.length).toBeGreaterThan(100);
     });
   });
@@ -127,7 +127,7 @@ Another short section.`;
     const chunks = splitter.splitMarkdownToChunks(text);
 
     // Verify code blocks are not split
-    chunks.forEach((chunk) => {
+    chunks.forEach(chunk => {
       const codeBlockMatches = chunk.content.match(/```/g) || [];
       expect(codeBlockMatches.length % 2).toBe(0);
     });

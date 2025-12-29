@@ -25,16 +25,16 @@ export class McpsIngester {
 
       // Server configuration
       mcpServers: {
-        // adds a STDIO connection to a server named "math"
+        // adds a STDIO connection to a server named "mobile-mcp"
         'mobile-mcp': {
-          command: 'npx',
-          args: ['-y', '@mobilenext/mobile-mcp@latest'],
+          command: './mobile-mcp/lib/index.js',
+          args: ['--stdio'],
           env: {
             ...process.env,
             // Suppress MCP server logs
             LOG_FILE: 'error', // Only show errors
           },
-          stderr: "ignore"
+          stderr: 'ignore',
         },
       },
     });

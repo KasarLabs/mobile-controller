@@ -53,10 +53,10 @@ This is the second section content.`;
 
       // Headers split the content, so we should have chunks for each section
       const firstSectionChunk = chunks.find(
-        (c) => c.meta.title === 'First Section',
+        c => c.meta.title === 'First Section'
       );
       const secondSectionChunk = chunks.find(
-        (c) => c.meta.title === 'Second Section',
+        c => c.meta.title === 'Second Section'
       );
 
       expect(firstSectionChunk).toBeDefined();
@@ -84,8 +84,8 @@ Second subsection.`;
 
       expect(chunks.length).toBeGreaterThanOrEqual(3);
       expect(chunks[0]!.meta.title).toBe('Main Section');
-      expect(chunks.find((c) => c.meta.title === 'Subsection 1')).toBeDefined();
-      expect(chunks.find((c) => c.meta.title === 'Subsection 2')).toBeDefined();
+      expect(chunks.find(c => c.meta.title === 'Subsection 1')).toBeDefined();
+      expect(chunks.find(c => c.meta.title === 'Subsection 2')).toBeDefined();
     });
 
     it('should ignore headers inside code blocks', () => {
@@ -156,10 +156,10 @@ Detailed text that should belong to the H3.`;
       expect(chunks.length).toBeGreaterThan(0);
       // Find a chunk that belongs to the H2 section
       const h2Chunk = chunks.find(
-        (c) =>
+        c =>
           c.content.includes('Some text in the H2') ||
           c.content.includes('Specific Topic') ||
-          c.content.includes('Detailed text'),
+          c.content.includes('Detailed text')
       );
       expect(h2Chunk).toBeDefined();
       // Title should be the deepest header among configured levels -> H2
@@ -190,8 +190,8 @@ Some text after.`;
       const chunks = splitter.splitMarkdownToChunks(text);
 
       // Verify code block is kept intact
-      const codeBlockChunk = chunks.find((c) =>
-        c.content.includes('def long_function()'),
+      const codeBlockChunk = chunks.find(c =>
+        c.content.includes('def long_function()')
       );
       expect(codeBlockChunk).toBeDefined();
       expect(codeBlockChunk!.content).toContain('```python');
@@ -218,7 +218,7 @@ Text after.`;
       expect(chunks).toHaveLength(1);
       expect(chunks[0]!.content).toContain('~~~javascript');
       expect(chunks[0]!.content).toContain(
-        'const code = "This uses tilde fences"',
+        'const code = "This uses tilde fences"'
       );
     });
 
@@ -274,7 +274,7 @@ This is the second section with more content.`;
 
         // The start of second chunk should be overlap chars before the end of first chunk
         expect(firstChunkEndIndex - secondChunkStartIndex).toBeLessThanOrEqual(
-          overlap,
+          overlap
         );
       }
     });
@@ -331,15 +331,13 @@ This is content for the second section with the same title`;
       const chunks = splitter.splitMarkdownToChunks(text);
 
       // Find all chunks with title "My Section"
-      const mySectionChunks = chunks.filter(
-        (c) => c.meta.title === 'My Section',
-      );
+      const mySectionChunks = chunks.filter(c => c.meta.title === 'My Section');
 
       // Should have at least 2 chunks with this title
       expect(mySectionChunks.length).toBeGreaterThanOrEqual(2);
 
       // Check that they have different unique IDs with incrementing numbers
-      const uniqueIds = mySectionChunks.map((c) => c.meta.uniqueId);
+      const uniqueIds = mySectionChunks.map(c => c.meta.uniqueId);
       expect(uniqueIds).toContain('test-my-section-0');
       expect(uniqueIds).toContain('test-my-section-1');
     });
@@ -369,14 +367,14 @@ Other content in section one point two`;
       expect(chunks.length).toBeGreaterThan(1);
 
       // Find chunks based on their unique content
-      const section11Chunk = chunks.find((c) =>
-        c.content.includes('section one point one'),
+      const section11Chunk = chunks.find(c =>
+        c.content.includes('section one point one')
       );
-      const subsectionChunk = chunks.find((c) =>
-        c.content.includes('More content in the subsection'),
+      const subsectionChunk = chunks.find(c =>
+        c.content.includes('More content in the subsection')
       );
-      const section12Chunk = chunks.find((c) =>
-        c.content.includes('section one point two'),
+      const section12Chunk = chunks.find(c =>
+        c.content.includes('section one point two')
       );
 
       // Check that chunks have appropriate header paths
@@ -391,8 +389,8 @@ Other content in section one point two`;
         // The subsection content should have appropriate headers in path
         expect(
           subsectionChunk.meta.headerPath.some(
-            (h) => h === 'Section 1.1' || h === 'Subsection 1.1.1',
-          ),
+            h => h === 'Section 1.1' || h === 'Subsection 1.1.1'
+          )
         ).toBe(true);
       }
 
@@ -415,7 +413,7 @@ This is a very long section that will definitely need to be split into multiple 
       const chunks = splitter.splitMarkdownToChunks(text);
 
       const longSectionChunks = chunks.filter(
-        (c) => c.meta.title === 'Long Section',
+        c => c.meta.title === 'Long Section'
       );
       expect(longSectionChunks.length).toBeGreaterThan(1);
 
@@ -493,7 +491,7 @@ Third paragraph with even more content.`;
 
       const chunks = splitter.splitMarkdownToChunks(text);
 
-      expect(chunks.every((c) => c.meta.title === 'ROOT')).toBe(true);
+      expect(chunks.every(c => c.meta.title === 'ROOT')).toBe(true);
     });
 
     it('should handle consecutive headers with no content', () => {
@@ -512,7 +510,7 @@ Some content here.`;
 
       // Should produce valid chunks even with empty sections
       expect(chunks.length).toBeGreaterThan(0);
-      chunks.forEach((chunk) => {
+      chunks.forEach(chunk => {
         expect(chunk.content.length).toBeGreaterThan(0);
       });
     });
@@ -570,11 +568,11 @@ More content here.`;
 
       const chunks = splitter.splitMarkdownToChunks(text);
 
-      chunks.forEach((chunk) => {
+      chunks.forEach(chunk => {
         expect(chunk.meta.startChar).toBeGreaterThanOrEqual(0);
         expect(chunk.meta.endChar).toBeGreaterThan(chunk.meta.startChar);
         expect(
-          chunk.meta.endChar - chunk.meta.startChar,
+          chunk.meta.endChar - chunk.meta.startChar
         ).toBeGreaterThanOrEqual(chunk.content.length);
       });
     });

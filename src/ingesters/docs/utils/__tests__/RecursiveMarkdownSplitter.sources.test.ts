@@ -38,23 +38,23 @@ More details here.`;
     const chunks = splitter.splitMarkdownToChunks(text);
 
     // Find chunk under the first H1
-    const introChunk = chunks.find((c) =>
+    const introChunk = chunks.find(c =>
       c.content.includes(
-        '# The Cairo Book: Introduction and Learning Resources',
-      ),
+        '# The Cairo Book: Introduction and Learning Resources'
+      )
     );
     expect(introChunk).toBeDefined();
     expect(introChunk!.meta.sourceLink).toBe(
-      'https://www.starknet.io/cairo-book/ch00-00-introduction.html',
+      'https://www.starknet.io/cairo-book/ch00-00-introduction.html'
     );
 
     // Find chunk under the second header (H2), after second Sources block
-    const aboutChunk = chunks.find((c) =>
-      c.content.includes('## About The Cairo Book'),
+    const aboutChunk = chunks.find(c =>
+      c.content.includes('## About The Cairo Book')
     );
     expect(aboutChunk).toBeDefined();
     expect(aboutChunk!.meta.sourceLink).toBe(
-      'https://www.starknet.io/cairo-book/',
+      'https://www.starknet.io/cairo-book/'
     );
   });
 });

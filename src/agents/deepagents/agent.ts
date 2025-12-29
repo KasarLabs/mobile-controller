@@ -100,14 +100,14 @@ export function createDeepAgent<
 
   const middleware: AgentMiddleware[] = [
     // Provides todo list management capabilities for tracking tasks
-    todoListMiddleware(),
+    // todoListMiddleware(),
     // Enables delegation to specialized subagents for complex tasks
     createSubAgentMiddleware({
       defaultModel: model,
       defaultTools: tools,
       defaultMiddleware: [
         // Subagent middleware: Todo list management
-        todoListMiddleware(),
+        // todoListMiddleware(),
         // Subagent middleware: Automatic conversation summarization when token limits are approached
         summarizationMiddleware({
           model,

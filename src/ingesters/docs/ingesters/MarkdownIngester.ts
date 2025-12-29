@@ -53,7 +53,7 @@ export abstract class MarkdownIngester extends BaseIngester {
 
     // Find the markdown-output.zip asset
     const zipAsset = latestRelease.assets.find(
-      (asset: any) => asset.name === 'markdown-output.zip',
+      (asset: any) => asset.name === 'markdown-output.zip'
     );
 
     if (!zipAsset) {
@@ -96,10 +96,10 @@ export abstract class MarkdownIngester extends BaseIngester {
    * @returns Promise<Document<BookChunk>[]> - Array of document chunks
    */
   protected override async createChunks(
-    pages: BookPageDto[],
+    pages: BookPageDto[]
   ): Promise<Document<BookChunk>[]> {
     logger.info(
-      `Creating chunks from ${this.source} pages based on markdown sections`,
+      `Creating chunks from ${this.source} pages based on markdown sections`
     );
     const chunks: Document<BookChunk>[] = [];
 
@@ -115,7 +115,7 @@ export abstract class MarkdownIngester extends BaseIngester {
    */
   protected createChunkFromPage(
     page_name: string,
-    page_content: string,
+    page_content: string
   ): Document<BookChunk>[] {
     // Sanitize code blocks to avoid parsing issues
     const localChunks: Document<BookChunk>[] = [];
@@ -153,7 +153,7 @@ export abstract class MarkdownIngester extends BaseIngester {
             sourceLink,
             source: this.source,
           },
-        }),
+        })
       );
     });
     return localChunks;
@@ -177,7 +177,7 @@ export abstract class MarkdownIngester extends BaseIngester {
   protected sanitizeCodeBlocks(content: string): string {
     const lines = content.split('\n');
     let isInCodeBlock = false;
-    const sanitizedLines = lines.filter((line) => {
+    const sanitizedLines = lines.filter(line => {
       if (line.trim().startsWith('```')) {
         isInCodeBlock = !isInCodeBlock;
         return true;
@@ -199,7 +199,7 @@ export abstract class MarkdownIngester extends BaseIngester {
    */
   protected parsePage(
     content: string,
-    split: boolean = false,
+    split: boolean = false
   ): ParsedSection[] {
     if (split) {
       return this.splitMarkdownIntoSections(content);
@@ -215,7 +215,7 @@ export abstract class MarkdownIngester extends BaseIngester {
         match[2] ?? '',
         content,
         20000,
-        createAnchor(match[2] ?? ''),
+        createAnchor(match[2] ?? '')
       );
       return sections;
     }

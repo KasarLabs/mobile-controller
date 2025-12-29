@@ -14,6 +14,14 @@ export {
   bibleToPromptString,
 } from './bible-loader.js';
 
+// Export app selection utilities
+export {
+  selectApps,
+  getAppByName,
+  AVAILABLE_APPS,
+  type AppConfig,
+} from './app-selector.js';
+
 export async function selectDevices(
   devices: DeviceInfo[]
 ): Promise<DeviceInfo> {
@@ -54,7 +62,9 @@ export async function selectDevices(
     throw new Error('Selected device not found');
   }
 
-  console.log(`\n✅ Selected device: ${selectedDevice.name} (${selectedDevice.id})\n`);
+  console.log(
+    `\n✅ Selected device: ${selectedDevice.name} (${selectedDevice.id})\n`
+  );
 
   return selectedDevice;
 }

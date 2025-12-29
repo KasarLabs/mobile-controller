@@ -108,33 +108,33 @@ export class RecursiveMarkdownSplitter {
     // Validate options
     if (this.options.maxChars <= 0) {
       throw new Error(
-        `maxChars must be positive, got ${this.options.maxChars}`,
+        `maxChars must be positive, got ${this.options.maxChars}`
       );
     }
     if (this.options.minChars < 0) {
       throw new Error(
-        `minChars must be non-negative, got ${this.options.minChars}`,
+        `minChars must be non-negative, got ${this.options.minChars}`
       );
     }
     if (this.options.overlap < 0) {
       throw new Error(
-        `overlap must be non-negative, got ${this.options.overlap}`,
+        `overlap must be non-negative, got ${this.options.overlap}`
       );
     }
     if (this.options.overlap >= this.options.maxChars) {
       throw new Error(
-        `Overlap (${this.options.overlap}) must be less than maxChars (${this.options.maxChars})`,
+        `Overlap (${this.options.overlap}) must be less than maxChars (${this.options.maxChars})`
       );
     }
     if (this.options.minChars >= this.options.maxChars) {
       throw new Error(
-        `minChars (${this.options.minChars}) must be less than maxChars (${this.options.maxChars})`,
+        `minChars (${this.options.minChars}) must be less than maxChars (${this.options.maxChars})`
       );
     }
     if (this.options.headerLevels.length === 0) {
       throw new Error('headerLevels must contain at least one level');
     }
-    if (this.options.headerLevels.some((level) => level < 1 || level > 6)) {
+    if (this.options.headerLevels.some(level => level < 1 || level > 6)) {
       throw new Error('headerLevels must contain values between 1 and 6');
     }
   }
@@ -159,26 +159,26 @@ export class RecursiveMarkdownSplitter {
     const segments = this.recursivelySplit(
       rootSegment,
       normalizedMarkdown,
-      tokens,
+      tokens
     );
 
     // Merge small segments to avoid tiny chunks
     const mergedSegments = this.mergeSmallSegments(
       segments,
       normalizedMarkdown,
-      tokens.codeBlocks,
+      tokens.codeBlocks
     );
 
     // Apply overlap and assemble chunks
     const rawChunks = this.assembleChunksWithOverlap(
       mergedSegments,
       normalizedMarkdown,
-      tokens.codeBlocks,
+      tokens.codeBlocks
     );
 
     // Remove empty chunks
     const nonEmptyChunks = rawChunks.filter(
-      (chunk) => chunk.content.trim().length > 0,
+      chunk => chunk.content.trim().length > 0
     );
 
     // Attach metadata
@@ -186,7 +186,7 @@ export class RecursiveMarkdownSplitter {
       nonEmptyChunks,
       normalizedMarkdown,
       tokens.headers,
-      tokens.sourceRanges,
+      tokens.sourceRanges
     );
   }
 
@@ -217,12 +217,12 @@ export class RecursiveMarkdownSplitter {
 
     // Filter out headers that are inside non-breakable code blocks
     // Allow headers inside oversized or malformed (breakable) code blocks
-    const filteredHeaders = headers.filter((header) => {
+    const filteredHeaders = headers.filter(header => {
       return !codeBlocks.some(
-        (block) =>
+        block =>
           header.start >= block.start &&
           header.end <= block.end &&
-          !block.breakable,
+          !block.breakable
       );
     });
 
@@ -244,7 +244,7 @@ export class RecursiveMarkdownSplitter {
    * attachment to set the chunk's sourceLink.
    */
   private parseSourceRanges(
-    markdown: string,
+    markdown: string
   ): Array<{ start: number; end: number; url: string }> {
     const lines = markdown.split('\n');
     const ranges: Array<{ start: number; end: number; url: string }> = [];
@@ -434,7 +434,7 @@ export class RecursiveMarkdownSplitter {
   private recursivelySplit(
     segment: Segment,
     markdown: string,
-    tokens: Tokens,
+    tokens: Tokens
   ): Segment[] {
     const segmentText = markdown.slice(segment.start, segment.end);
 
@@ -446,8 +446,8 @@ export class RecursiveMarkdownSplitter {
     // Try to split by headers
     const headerSplits = this.splitByHeaders(segment, markdown, tokens);
     if (headerSplits.length > 1) {
-      return headerSplits.flatMap((s) =>
-        this.recursivelySplit(s, markdown, tokens),
+      return headerSplits.flatMap(s =>
+        this.recursivelySplit(s, markdown, tokens)
       );
     }
 
@@ -455,19 +455,19 @@ export class RecursiveMarkdownSplitter {
     const paragraphSplits = this.splitByParagraphs(
       segment,
       markdown,
-      tokens.codeBlocks,
+      tokens.codeBlocks
     );
     if (paragraphSplits.length > 1) {
-      return paragraphSplits.flatMap((s) =>
-        this.recursivelySplit(s, markdown, tokens),
+      return paragraphSplits.flatMap(s =>
+        this.recursivelySplit(s, markdown, tokens)
       );
     }
 
     // Try to split by lines
     const lineSplits = this.splitByLines(segment, markdown, tokens.codeBlocks);
     if (lineSplits.length > 1) {
-      return lineSplits.flatMap((s) =>
-        this.recursivelySplit(s, markdown, tokens),
+      return lineSplits.flatMap(s =>
+        this.recursivelySplit(s, markdown, tokens)
       );
     }
 
@@ -475,15 +475,15 @@ export class RecursiveMarkdownSplitter {
     if (segmentText.length > this.options.maxChars) {
       // Check if it's a single code block
       const isCodeBlock = tokens.codeBlocks.some(
-        (block) => block.start <= segment.start && block.end >= segment.end,
+        block => block.start <= segment.start && block.end >= segment.end
       );
       if (isCodeBlock) {
         logger.warn(
-          `Code block exceeds maxChars (${segmentText.length} > ${this.options.maxChars})`,
+          `Code block exceeds maxChars (${segmentText.length} > ${this.options.maxChars})`
         );
       } else {
         logger.warn(
-          `Segment exceeds maxChars and cannot be split further (${segmentText.length} > ${this.options.maxChars})`,
+          `Segment exceeds maxChars and cannot be split further (${segmentText.length} > ${this.options.maxChars})`
         );
       }
     }
@@ -497,14 +497,14 @@ export class RecursiveMarkdownSplitter {
   private splitByHeaders(
     segment: Segment,
     markdown: string,
-    tokens: Tokens,
+    tokens: Tokens
   ): Segment[] {
     // Find headers within this segment that are configured split levels
     const segmentHeaders = tokens.headers.filter(
-      (h) =>
+      h =>
         h.start >= segment.start &&
         h.end <= segment.end &&
-        this.options.headerLevels.includes(h.level as 1 | 2 | 3),
+        this.options.headerLevels.includes(h.level as 1 | 2 | 3)
     );
 
     if (segmentHeaders.length === 0) {
@@ -539,14 +539,14 @@ export class RecursiveMarkdownSplitter {
       // Check first segment starts at segment beginning
       if (segments[0]!.start !== segment.start) {
         logger.error(
-          `First segment doesn't start at segment beginning: ${segments[0]!.start} vs ${segment.start}`,
+          `First segment doesn't start at segment beginning: ${segments[0]!.start} vs ${segment.start}`
         );
       }
 
       // Check last segment ends at segment end
       if (segments[segments.length - 1]!.end !== segment.end) {
         logger.error(
-          `Last segment doesn't end at segment end: ${segments[segments.length - 1]!.end} vs ${segment.end}`,
+          `Last segment doesn't end at segment end: ${segments[segments.length - 1]!.end} vs ${segment.end}`
         );
       }
 
@@ -554,7 +554,7 @@ export class RecursiveMarkdownSplitter {
       for (let i = 1; i < segments.length; i++) {
         if (segments[i]!.start !== segments[i - 1]!.end) {
           logger.error(
-            `Gap or overlap detected between segments: ${segments[i - 1]!.end} to ${segments[i]!.start}`,
+            `Gap or overlap detected between segments: ${segments[i - 1]!.end} to ${segments[i]!.start}`
           );
         }
       }
@@ -569,7 +569,7 @@ export class RecursiveMarkdownSplitter {
   private splitByParagraphs(
     segment: Segment,
     markdown: string,
-    codeBlocks: CodeBlockToken[],
+    codeBlocks: CodeBlockToken[]
   ): Segment[] {
     const segmentText = markdown.slice(segment.start, segment.end);
     const segments: Segment[] = [];
@@ -615,7 +615,7 @@ export class RecursiveMarkdownSplitter {
   private splitByLines(
     segment: Segment,
     markdown: string,
-    codeBlocks: CodeBlockToken[],
+    codeBlocks: CodeBlockToken[]
   ): Segment[] {
     const segmentText = markdown.slice(segment.start, segment.end);
     const lines = segmentText.split('\n');
@@ -667,14 +667,14 @@ export class RecursiveMarkdownSplitter {
    */
   private isInsideCodeBlock(
     position: number,
-    codeBlocks: CodeBlockToken[],
+    codeBlocks: CodeBlockToken[]
   ): boolean {
     return this.getEnclosingCodeBlock(position, codeBlocks) !== null;
   }
 
   private getEnclosingCodeBlock(
     position: number,
-    codeBlocks: CodeBlockToken[],
+    codeBlocks: CodeBlockToken[]
   ): CodeBlockToken | null {
     for (const block of codeBlocks) {
       if (position > block.start && position < block.end) return block;
@@ -688,7 +688,7 @@ export class RecursiveMarkdownSplitter {
   private mergeSmallSegments(
     segments: Segment[],
     markdown: string,
-    codeBlocks: CodeBlockToken[],
+    codeBlocks: CodeBlockToken[]
   ): Segment[] {
     if (segments.length <= 1) return segments;
 
@@ -795,7 +795,7 @@ export class RecursiveMarkdownSplitter {
   private assembleChunksWithOverlap(
     segments: Segment[],
     markdown: string,
-    codeBlocks: CodeBlockToken[],
+    codeBlocks: CodeBlockToken[]
   ): Array<{
     content: string;
     start: number;
@@ -821,7 +821,7 @@ export class RecursiveMarkdownSplitter {
         const desired = Math.max(
           prevSegment.end -
             Math.min(this.options.overlap, prevSegment.end - prevSegment.start),
-          prevSegment.start,
+          prevSegment.start
         );
         chunkStartAbs = desired;
         const enclosing = this.getEnclosingCodeBlock(chunkStartAbs, codeBlocks);
@@ -852,7 +852,7 @@ export class RecursiveMarkdownSplitter {
     rawChunks: Array<{ content: string; start: number; end: number }>,
     markdown: string,
     headers: HeaderToken[],
-    sourceRanges?: Array<{ start: number; end: number; url: string }>,
+    sourceRanges?: Array<{ start: number; end: number; url: string }>
   ): Chunk[] {
     const chunks: Chunk[] = [];
     const titleCounts = new Map<string, number>();
@@ -865,7 +865,7 @@ export class RecursiveMarkdownSplitter {
       // Build full header path from all headers strictly before the end of this chunk
       // Do not include a header that starts exactly at the end boundary; it belongs to the next segment.
       const allHeadersBeforeOrAtEnd = headers.filter(
-        (h) => h.start < rawChunk.end,
+        h => h.start < rawChunk.end
       );
       const headerStack: { level: number; text: string }[] = [];
 
@@ -880,7 +880,7 @@ export class RecursiveMarkdownSplitter {
         headerStack.push({ level: header.level, text: header.text });
       }
 
-      headerPath = headerStack.map((h) => h.text);
+      headerPath = headerStack.map(h => h.text);
 
       // Prefer the deepest header among the configured levels (e.g., H2 if [1,2])
       let preferredTitle: string | undefined;
@@ -920,7 +920,7 @@ export class RecursiveMarkdownSplitter {
 
         // Step 1: range that contains anchor
         let active = sourceRanges.find(
-          (r) => anchorPos >= r.start && anchorPos < r.end,
+          r => anchorPos >= r.start && anchorPos < r.end
         );
 
         // Step 2: range that starts within the chunk [start, end)
@@ -990,7 +990,7 @@ export class RecursiveMarkdownSplitter {
 // Export the main function as well for convenience
 export function splitMarkdownToChunks(
   markdown: string,
-  opts?: SplitOptions,
+  opts?: SplitOptions
 ): Chunk[] {
   const splitter = new RecursiveMarkdownSplitter(opts);
   return splitter.splitMarkdownToChunks(markdown);

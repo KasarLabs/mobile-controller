@@ -405,7 +405,7 @@ export function createSubAgentMiddleware(
     defaultMiddleware = null,
     defaultInterruptOn = null,
     subagents = [],
-    systemPrompt = TASK_SYSTEM_PROMPT,
+    systemPrompt = '',
     generalPurposeAgent = true,
     taskDescription = null,
   } = options;

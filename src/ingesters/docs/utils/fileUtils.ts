@@ -15,7 +15,7 @@ import { logger } from './logger';
  */
 export async function processDocFiles(
   config: BookConfig,
-  directory: string,
+  directory: string
 ): Promise<BookPageDto[]> {
   try {
     logger.info(`Processing documentation files in ${directory}`);

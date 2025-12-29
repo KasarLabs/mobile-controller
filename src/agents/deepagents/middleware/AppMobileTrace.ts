@@ -72,8 +72,7 @@ export class AppMobileTrace {
             return {
               name: timelineEntry.name,
               last_used: timelineEntry.last_used,
-              current_session_start:
-                timelineEntry.current_session_start || now,
+              current_session_start: timelineEntry.current_session_start || now,
             };
           } else {
             // Not the current app

@@ -95,7 +95,7 @@ async function setupVectorStore(): Promise<VectorStore> {
     // Initialize vector store
     vectorStore = await VectorStore.getInstance(
       dbConfig,
-      embeddingModel as unknown as Embeddings,
+      embeddingModel as unknown as Embeddings
     );
     logger.info('VectorStore initialized successfully');
     return vectorStore;
@@ -134,8 +134,8 @@ async function promptForTarget(): Promise<DocumentSource | 'Everything'> {
     availableSources.length + 1
   }: Everything): `;
 
-  return new Promise((resolve) => {
-    rl.question(prompt, (answer) => {
+  return new Promise(resolve => {
+    rl.question(prompt, answer => {
       rl.close();
 
       const selectedIndex = parseInt(answer) - 1;
@@ -147,7 +147,7 @@ async function promptForTarget(): Promise<DocumentSource | 'Everything'> {
         resolve('Everything');
       } else {
         logger.error(
-          `Invalid selection: ${answer}, defaulting to 'Everything'`,
+          `Invalid selection: ${answer}, defaulting to 'Everything'`
         );
         process.exit(1);
       }
@@ -194,7 +194,7 @@ async function main() {
     if (target === 'Everything') {
       // Ingest all sources
       const sources = IngesterFactory.getAvailableSources();
-      await Promise.all(sources.map((source) => ingestSource(source)));
+      await Promise.all(sources.map(source => ingestSource(source)));
     } else {
       // Ingest specific source
       await ingestSource(target);

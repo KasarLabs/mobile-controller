@@ -25,22 +25,22 @@ Tiny bit.`;
     // Debug output
     console.log(
       'Chunks:',
-      chunks.map((c) => ({
+      chunks.map(c => ({
         title: c.meta.title,
         length: c.content.length,
         preview: c.content.substring(0, 30).replace(/\n/g, '\\n'),
-      })),
+      }))
     );
 
     // The final tiny chunk should be merged with the previous one
     const lastChunk = chunks[chunks.length - 1];
 
     // Verify the tiny content was handled appropriately
-    const hasTinyContent = chunks.some((c) => c.content.includes('Tiny bit'));
+    const hasTinyContent = chunks.some(c => c.content.includes('Tiny bit'));
     expect(hasTinyContent).toBe(true);
 
     // The tiny section should not be on its own
-    const tinyChunk = chunks.find((c) => c.meta.title === 'Section Three');
+    const tinyChunk = chunks.find(c => c.meta.title === 'Section Three');
     if (tinyChunk) {
       expect(tinyChunk.content.length).toBeGreaterThanOrEqual(50); // Should meet minChars
     }
@@ -107,7 +107,7 @@ End.`;
     }
 
     // No chunk should be excessively large
-    chunks.forEach((chunk) => {
+    chunks.forEach(chunk => {
       expect(chunk.content.length).toBeLessThanOrEqual(75); // 1.5x maxChars
     });
   });
@@ -162,7 +162,7 @@ End.`;
     const chunks = splitter.splitMarkdownToChunks(text);
 
     // Code block should be preserved intact
-    const codeChunk = chunks.find((c) => c.content.includes('def hello()'));
+    const codeChunk = chunks.find(c => c.content.includes('def hello()'));
     expect(codeChunk).toBeDefined();
     expect(codeChunk!.content).toMatch(/```python[\s\S]*?```/);
   });

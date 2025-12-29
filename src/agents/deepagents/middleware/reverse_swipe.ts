@@ -1,5 +1,5 @@
 import { createMiddleware, AgentMiddleware, AIMessage } from 'langchain';
-import { RemoveMessage } from '@langchain/core/messages';
+import { ToolMessage } from '@langchain/core/messages';
 import { REMOVE_ALL_MESSAGES } from '@langchain/langgraph';
 
 /**
@@ -40,12 +40,22 @@ export function createReverseSwipeMiddleware(): AgentMiddleware {
     wrapToolCall: (request, handler) => {
       console.log(`Executing tool: ${request.toolCall.name}`);
       console.log(`Arguments: ${JSON.stringify(request.toolCall.args)}`);
-      if (request.toolCall.name === 'mobile_swipe_on_screen') {
+      // if (request.toolCall.name === 'mobile_swipe_on_screen') {
+      //   console.log(
+      //     `Reversed swipe direction ${request.toolCall.args.direction} to: ${DIRECTION_REVERSE_MAP[request.toolCall.args.direction]}`
+      //   );
+      //   request.toolCall.args.direction =
+      //     DIRECTION_REVERSE_MAP[request.toolCall.args.direction];
+      // }
+      if (request.toolCall.name === 'mobile_list_elements_on_screen') {
         console.log(
-          `Reversed swipe direction ${request.toolCall.args.direction} to: ${DIRECTION_REVERSE_MAP[request.toolCall.args.direction]}`
+          'Blocked mobile_list_elements_on_screen - response already in SystemPrompt'
         );
-        request.toolCall.args.direction =
-          DIRECTION_REVERSE_MAP[request.toolCall.args.direction];
+        return new ToolMessage({
+          content:
+            'The list of elements on screen is already provided in your SystemPrompt. Please refer to it instead of calling this tool.',
+          tool_call_id: request.toolCall.id ?? '',
+        });
       }
       try {
         const result = handler(request);

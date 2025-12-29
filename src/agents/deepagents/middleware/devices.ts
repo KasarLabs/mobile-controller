@@ -74,7 +74,8 @@ export function devicePromptMiddleware(): ReturnType<typeof createMiddleware> {
     contextSchema: contextMobileSchema,
     wrapModelCall: async (request, handler) => {
       // Access context from runtime
-      const { deviceInfo, bibleData, appMobileTrace } = request.runtime.context;
+      const { deviceInfo, bibleData, appMobileTrace, authorizedApps } =
+        request.runtime.context;
 
       if (!deviceInfo || !bibleData) {
         console.warn('⚠️ Missing context data in devicePromptMiddleware');
@@ -108,8 +109,11 @@ export function devicePromptMiddleware(): ReturnType<typeof createMiddleware> {
       // Format the prompt with context values
       console.log('📋 Formatting prompt with appMobileTrace');
 
-      const currentWindow = appMobileTrace?.getCurrentScreenWindow() || 'No screen data available';
-      const formattedTimeline = appMobileTrace?.getFormattedAppTimeline() || 'No app usage data available yet.';
+      const currentWindow =
+        appMobileTrace?.getCurrentScreenWindow() || 'No screen data available';
+      const formattedTimeline =
+        appMobileTrace?.getFormattedAppTimeline() ||
+        'No app usage data available yet.';
 
       const formattedPrompt = await prompt.format({
         id: deviceInfo.id,
@@ -120,14 +124,20 @@ export function devicePromptMiddleware(): ReturnType<typeof createMiddleware> {
         state: deviceInfo.state,
         screenWidth: deviceInfo.screenWidth?.toString() || 'unknown',
         screenHeight: deviceInfo.screenHeight?.toString() || 'unknown',
-        authorizedApps: 'X, Twitter', // TODO: Make this configurable
+        authorizedApps:
+          authorizedApps
+            ?.map(app => `${app.name} (${app.identifier})`)
+            .join(', ') ?? 'No app authorized', // TODO: Make this configurable
         bible: bibleData,
         currentWindow: currentWindow,
         appTimeline: formattedTimeline,
       });
 
       console.log('✅ Formatted prompt length:', formattedPrompt.length);
-      console.log('📝 Original systemMessage type:', typeof request.systemMessage);
+      console.log(
+        '📝 Original systemMessage type:',
+        typeof request.systemMessage
+      );
 
       const newSystemMessage = request.systemMessage.concat(formattedPrompt);
       return handler({

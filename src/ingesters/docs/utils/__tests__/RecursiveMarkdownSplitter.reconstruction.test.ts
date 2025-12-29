@@ -14,7 +14,7 @@ describe('RecursiveMarkdownSplitter - Reconstruction Tests', () => {
       end: number;
       overlapStart?: number;
     }>,
-    original: string,
+    original: string
   ): string {
     if (chunks.length === 0) return '';
 
@@ -65,13 +65,13 @@ More content in the first section.`;
           (splitter as any).recursivelySplit(
             { start: 0, end: original.length },
             original,
-            (splitter as any).tokenize(original),
+            (splitter as any).tokenize(original)
           ),
           original,
-          (splitter as any).tokenize(original).codeBlocks,
+          (splitter as any).tokenize(original).codeBlocks
         ),
         original,
-        (splitter as any).tokenize(original).codeBlocks,
+        (splitter as any).tokenize(original).codeBlocks
       );
 
       const reconstructed = reconstructFromChunks(rawChunks, original);
@@ -104,13 +104,13 @@ Content for the third section goes here.`;
           (splitter as any).recursivelySplit(
             { start: 0, end: original.length },
             original,
-            (splitter as any).tokenize(original),
+            (splitter as any).tokenize(original)
           ),
           original,
-          (splitter as any).tokenize(original).codeBlocks,
+          (splitter as any).tokenize(original).codeBlocks
         ),
         original,
-        (splitter as any).tokenize(original).codeBlocks,
+        (splitter as any).tokenize(original).codeBlocks
       );
 
       const reconstructed = reconstructFromChunks(rawChunks, original);
@@ -145,13 +145,13 @@ Content for another main section.`;
           (splitter as any).recursivelySplit(
             { start: 0, end: original.length },
             original,
-            (splitter as any).tokenize(original),
+            (splitter as any).tokenize(original)
           ),
           original,
-          (splitter as any).tokenize(original).codeBlocks,
+          (splitter as any).tokenize(original).codeBlocks
         ),
         original,
-        (splitter as any).tokenize(original).codeBlocks,
+        (splitter as any).tokenize(original).codeBlocks
       );
 
       const reconstructed = reconstructFromChunks(rawChunks, original);
@@ -179,13 +179,13 @@ More content here.`;
           (splitter as any).recursivelySplit(
             { start: 0, end: original.length },
             original,
-            (splitter as any).tokenize(original),
+            (splitter as any).tokenize(original)
           ),
           original,
-          (splitter as any).tokenize(original).codeBlocks,
+          (splitter as any).tokenize(original).codeBlocks
         ),
         original,
-        (splitter as any).tokenize(original).codeBlocks,
+        (splitter as any).tokenize(original).codeBlocks
       );
 
       const reconstructed = reconstructFromChunks(rawChunks, original);
@@ -216,13 +216,13 @@ Content under second header.`;
           (splitter as any).recursivelySplit(
             { start: 0, end: original.length },
             original,
-            (splitter as any).tokenize(original),
+            (splitter as any).tokenize(original)
           ),
           original,
-          (splitter as any).tokenize(original).codeBlocks,
+          (splitter as any).tokenize(original).codeBlocks
         ),
         original,
-        (splitter as any).tokenize(original).codeBlocks,
+        (splitter as any).tokenize(original).codeBlocks
       );
 
       const reconstructed = reconstructFromChunks(rawChunks, original);
@@ -253,13 +253,13 @@ More content.`;
           (splitter as any).recursivelySplit(
             { start: 0, end: original.length },
             original,
-            (splitter as any).tokenize(original),
+            (splitter as any).tokenize(original)
           ),
           original,
-          (splitter as any).tokenize(original).codeBlocks,
+          (splitter as any).tokenize(original).codeBlocks
         ),
         original,
-        (splitter as any).tokenize(original).codeBlocks,
+        (splitter as any).tokenize(original).codeBlocks
       );
 
       const reconstructed = reconstructFromChunks(rawChunks, original);
@@ -294,13 +294,13 @@ Text after code block.`;
           (splitter as any).recursivelySplit(
             { start: 0, end: original.length },
             original,
-            (splitter as any).tokenize(original),
+            (splitter as any).tokenize(original)
           ),
           original,
-          (splitter as any).tokenize(original).codeBlocks,
+          (splitter as any).tokenize(original).codeBlocks
         ),
         original,
-        (splitter as any).tokenize(original).codeBlocks,
+        (splitter as any).tokenize(original).codeBlocks
       );
 
       const reconstructed = reconstructFromChunks(rawChunks, original);
@@ -336,13 +336,13 @@ Text after the code.`;
           (splitter as any).recursivelySplit(
             { start: 0, end: original.length },
             original,
-            (splitter as any).tokenize(original),
+            (splitter as any).tokenize(original)
           ),
           original,
-          (splitter as any).tokenize(original).codeBlocks,
+          (splitter as any).tokenize(original).codeBlocks
         ),
         original,
-        (splitter as any).tokenize(original).codeBlocks,
+        (splitter as any).tokenize(original).codeBlocks
       );
 
       const reconstructed = reconstructFromChunks(rawChunks, original);
@@ -414,13 +414,13 @@ Cairo is a powerful language for writing provable programs.`;
           (splitter as any).recursivelySplit(
             { start: 0, end: original.length },
             original,
-            (splitter as any).tokenize(original),
+            (splitter as any).tokenize(original)
           ),
           original,
-          (splitter as any).tokenize(original).codeBlocks,
+          (splitter as any).tokenize(original).codeBlocks
         ),
         original,
-        (splitter as any).tokenize(original).codeBlocks,
+        (splitter as any).tokenize(original).codeBlocks
       );
 
       const reconstructed = reconstructFromChunks(rawChunks, original);
