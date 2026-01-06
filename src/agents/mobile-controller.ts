@@ -20,13 +20,12 @@ import {
 } from '../utils/index.js';
 import { createDeepAgent } from './deepagents/agent.js';
 import { SubAgent } from './deepagents/index.js';
-import {
-  TWITTER_TASK_SUBAGENT_PROMPT,
-  DEEPAGENTS_SYSTEM_PROMPT,
-  INSTAGRAM_TASK_SUBAGENT_PROMPT,
-  TIKTOK_TASK_SUBAGENT_PROMPT,
-  YOUTUBE_TASK_SUBAGENT_PROMPT,
-} from '../prompts/agents/deepagents.prompt.js';
+import { DEEPAGENTS_SYSTEM_PROMPT } from '../prompts/agents/deepagents.prompt.js';
+import { TWITTER_TASK_SUBAGENT_PROMPT } from '../prompts/agents/twitter.prompt.js';
+import { INSTAGRAM_TASK_SUBAGENT_PROMPT } from '../prompts/agents/instagram.prompt.js';
+import { TIKTOK_TASK_SUBAGENT_PROMPT } from '../prompts/agents/tiktok.prompt.js';
+import { YOUTUBE_TASK_SUBAGENT_PROMPT } from '../prompts/agents/youtube.prompt.js';
+import { FACEBOOK_TASK_SUBAGENT_PROMPT } from '../prompts/agents/facebook.prompt.js';
 import { MobileContextAnnotation } from './deepagents/types/index.js';
 import {
   deviceCheckMiddleware,
@@ -226,6 +225,29 @@ export class MobileControllerGraph {
             description:
               'Handles YouTube related execution tasks on the mobile device',
             systemPrompt: youtubeSubAgentPrompt,
+            middleware: [
+              deviceCheckMiddlewares,
+              devicePromptMiddlewareInstance,
+              todoListMiddleware,
+            ],
+            tools: filterTools,
+            model: this.model,
+          };
+          break;
+
+        case 'Facebook':
+          const facebookSubAgentPrompt = await formatPromptWithDevice(
+            FACEBOOK_TASK_SUBAGENT_PROMPT,
+            this.selectedDevices,
+            {
+              bible: bibleToPromptString(this.selectedBible),
+            }
+          );
+          subAgent = {
+            name: 'FacebookSubAgent',
+            description:
+              'Handles Facebook related execution tasks on the mobile device',
+            systemPrompt: facebookSubAgentPrompt,
             middleware: [
               deviceCheckMiddlewares,
               devicePromptMiddlewareInstance,

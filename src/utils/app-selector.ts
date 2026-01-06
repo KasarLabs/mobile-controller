@@ -33,6 +33,11 @@ export const AVAILABLE_APPS: AppConfig[] = [
     identifier: 'com.google.android.youtube',
     description: 'Comment, like, subscribe, and save videos',
   },
+  {
+    name: 'Facebook',
+    identifier: 'com.facebook.katana',
+    description: 'Like, comment, share posts, and interact with friends',
+  },
 ];
 
 /**
