@@ -4439,3 +4439,344 @@
 [2025-12-29T15:51:58.347Z] INFO => {"devices":[{"id":"emulator-5554","name":"Pixel 9 Pro","platform":"android","type":"emulator","version":"16","state":"online"}]}
 [2025-12-29T15:51:58.355Z] INFO Invoking mobile_list_elements_on_screen with args: {"device":"emulator-5554"}
 [2025-12-29T15:52:00.525Z] INFO => Found these elements on screen: [{"type":"android.widget.ImageView","text":"","label":"AI Supervision profile","identifier":"com.zhiliaoapp.musically:id/yne","coordinates":{"x":1123,"y":1547,"width":133,"height":133}},{"type":"android.widget.Button","text":"","label":"Follow AI Supervision","identifier":"com.zhiliaoapp.musically:id/hek","coordinates":{"x":1099,"y":1628,"width":181,"height":103}},{"type":"android.widget.ImageView","text":"","label":"Like","identifier":"com.zhiliaoapp.musically:id/f2t","coordinates":{"x":1122,"y":1731,"width":135,"height":134}},{"type":"android.widget.Button","text":"4,560","label":"","identifier":"com.zhiliaoapp.musically:id/f2y","coordinates":{"x":1088,"y":1865,"width":192,"height":26}},{"type":"android.widget.Button","text":"","label":"Like video. 4,560 likes","identifier":"com.zhiliaoapp.musically:id/f36","coordinates":{"x":1088,"y":1731,"width":192,"height":180}},{"type":"android.widget.Button","text":"29","label":"","identifier":"com.zhiliaoapp.musically:id/dni","coordinates":{"x":1088,"y":2045,"width":192,"height":25}},{"type":"android.widget.Button","text":"","label":"Read or add comments. 29 comments","identifier":"com.zhiliaoapp.musically:id/ds3","coordinates":{"x":1088,"y":1911,"width":192,"height":180}},{"type":"android.widget.TextView","text":"4,179","label":"","identifier":"com.zhiliaoapp.musically:id/gqi","coordinates":{"x":1088,"y":2225,"width":192,"height":26}},{"type":"android.widget.Button","text":"","label":"Add or remove this video from Favorites.","identifier":"com.zhiliaoapp.musically:id/gr5","coordinates":{"x":1088,"y":2091,"width":192,"height":180}},{"type":"android.widget.Button","text":"","label":"Sound: stellar (Sped Up) by .diedlonely & énouement","identifier":"com.zhiliaoapp.musically:id/nbg","coordinates":{"x":1088,"y":2451,"width":192,"height":186}},{"type":"android.widget.Button","text":"658","label":"","identifier":"com.zhiliaoapp.musically:id/t28","coordinates":{"x":1099,"y":2385,"width":181,"height":63}},{"type":"android.widget.Button","text":"","label":"Share video. 658 shares","identifier":"com.zhiliaoapp.musically:id/f36","coordinates":{"x":1088,"y":2271,"width":192,"height":180}},{"type":"android.widget.Button","text":"AI Supervision","label":"","identifier":"com.zhiliaoapp.musically:id/title","coordinates":{"x":36,"y":2109,"width":337,"height":66}},{"type":"android.widget.TextView","text":"Photo","label":"","identifier":"com.zhiliaoapp.musically:id/xfz","coordinates":{"x":454,"y":2109,"width":103,"height":66}},{"type":"android.widget.TextView","text":"· 07-24","label":"","identifier":"com.zhiliaoapp.musically:id/xpe","coordinates":{"x":584,"y":2116,"width":135,"height":57}},{"type":"com.bytedance.tux.input.TuxTextLayoutView","text":"5 practical ways to build AI agents that handle emails, schedule tasks, and make decisions using tools like OpenAI and n8n.&#10;5 Practical Ways to Build Agents Work on Email, Coordinate Appointments, and Take&#10;Decisions using tools like OpenAI and n8n.…","label":"","identifier":"com.zhiliaoapp.musically:id/desc","coordinates":{"x":36,"y":2199,"width":1004,"height":342}},{"type":"android.widget.Button","text":"See original","label":"","coordinates":{"x":36,"y":2553,"width":322,"height":72}},{"type":"android.view.View","text":"","label":"Video","identifier":"com.zhiliaoapp.musically:id/long_press_layout","coordinates":{"x":0,"y":0,"width":1280,"height":2637}},{"type":"android.widget.EditText","text":"Replying to خالد ال غانم khalid Al Ghanim","label":"Replying to خالد ال غانم khalid Al Ghanim","identifier":"com.zhiliaoapp.musically:id/dnx","coordinates":{"x":72,"y":2641,"width":758,"height":110}},{"type":"android.widget.TextView","text":"&#128513;","label":"","identifier":"com.zhiliaoapp.musically:id/g52","coordinates":{"x":860,"y":2667,"width":96,"height":96}},{"type":"android.widget.TextView","text":"&#129392;","label":"","identifier":"com.zhiliaoapp.musically:id/g52","coordinates":{"x":992,"y":2667,"width":96,"height":96}},{"type":"android.widget.TextView","text":"&#128514;","label":"","identifier":"com.zhiliaoapp.musically:id/g52","coordinates":{"x":1124,"y":2667,"width":96,"height":96}},{"type":"android.widget.ImageView","text":"","label":"Back","identifier":"com.zhiliaoapp.musically:id/b8v","coordinates":{"x":18,"y":156,"width":156,"height":156}},{"type":"android.widget.ImageView","text":"","label":"Search","identifier":"com.zhiliaoapp.musically:id/knj","coordinates":{"x":210,"y":210,"width":48,"height":48}},{"type":"android.widget.TextView","text":"Find related content","label":"","identifier":"com.zhiliaoapp.musically:id/xwe","coordinates":{"x":276,"y":205,"width":400,"height":57}},{"type":"android.widget.Button","text":"Search","label":"","identifier":"com.zhiliaoapp.musically:id/wzd","coordinates":{"x":1021,"y":180,"width":211,"height":108}}]
+[2026-01-06T14:33:54.779Z] INFO mobile-mcp server running on stdio
+[2026-01-06T14:33:54.849Z] INFO Invoking mobile_list_available_devices with args: {"noParams":{}}
+[2026-01-06T14:33:55.416Z] INFO => {"devices":[{"id":"emulator-5554","name":"Pixel 9 Pro","platform":"android","type":"emulator","version":"16","state":"online"}]}
+[2026-01-06T14:33:56.430Z] INFO Invoking mobile_get_screen_size with args: {"device":"R92Y512HR8F"}
+[2026-01-06T14:38:22.060Z] INFO mobile-mcp server running on stdio
+[2026-01-06T14:38:22.075Z] INFO Invoking mobile_list_available_devices with args: {"noParams":{}}
+[2026-01-06T14:38:22.451Z] INFO => {"devices":[{"id":"emulator-5554","name":"Pixel 9 Pro","platform":"android","type":"emulator","version":"16","state":"online"}]}
+[2026-01-06T14:38:22.455Z] INFO Invoking mobile_get_screen_size with args: {"device":"emulator-5554"}
+[2026-01-06T14:38:22.644Z] INFO => Screen size is 1280x2856 pixels
+[2026-01-06T14:40:34.739Z] INFO mobile-mcp server running on stdio
+[2026-01-06T14:40:34.753Z] INFO Invoking mobile_list_available_devices with args: {"noParams":{}}
+[2026-01-06T14:40:35.250Z] INFO => {"devices":[{"id":"emulator-5554","name":"Pixel 9 Pro","platform":"android","type":"emulator","version":"16","state":"online"}]}
+[2026-01-06T14:40:35.254Z] INFO Invoking mobile_get_screen_size with args: {"device":"emulator-5554"}
+[2026-01-06T14:40:35.409Z] INFO => Screen size is 1280x2856 pixels
+[2026-01-06T14:42:30.259Z] INFO mobile-mcp server running on stdio
+[2026-01-06T14:42:30.309Z] INFO Invoking mobile_list_available_devices with args: {"noParams":{}}
+[2026-01-06T14:42:30.731Z] INFO => {"devices":[{"id":"emulator-5554","name":"Pixel 9 Pro","platform":"android","type":"emulator","version":"16","state":"online"}]}
+[2026-01-06T14:42:30.735Z] INFO Invoking mobile_get_screen_size with args: {"device":"emulator-5554"}
+[2026-01-06T14:42:30.898Z] INFO => Screen size is 1280x2856 pixels
+[2026-01-06T14:42:34.580Z] INFO Invoking mobile_list_available_devices with args: {"noParams":{}}
+[2026-01-06T14:42:34.976Z] INFO => {"devices":[{"id":"emulator-5554","name":"Pixel 9 Pro","platform":"android","type":"emulator","version":"16","state":"online"}]}
+[2026-01-06T14:42:35.993Z] INFO Invoking mobile_get_screen_size with args: {"device":"emulator-5554"}
+[2026-01-06T14:42:36.163Z] INFO => Screen size is 1280x2856 pixels
+[2026-01-06T14:43:14.284Z] INFO mobile-mcp server running on stdio
+[2026-01-06T14:43:14.336Z] INFO Invoking mobile_list_available_devices with args: {"noParams":{}}
+[2026-01-06T14:43:14.993Z] INFO => {"devices":[{"id":"9bb14caf","name":"CPH2173","platform":"android","type":"emulator","version":"14","state":"online"},{"id":"emulator-5554","name":"Pixel 9 Pro","platform":"android","type":"emulator","version":"16","state":"online"}]}
+[2026-01-06T14:43:17.156Z] INFO Invoking mobile_get_screen_size with args: {"device":"9bb14caf"}
+[2026-01-06T14:43:17.353Z] INFO => Screen size is 1080x2412 pixels
+[2026-01-06T14:43:21.688Z] INFO Invoking mobile_list_available_devices with args: {"noParams":{}}
+[2026-01-06T14:43:22.354Z] INFO => {"devices":[{"id":"9bb14caf","name":"CPH2173","platform":"android","type":"emulator","version":"14","state":"online"},{"id":"emulator-5554","name":"Pixel 9 Pro","platform":"android","type":"emulator","version":"16","state":"online"}]}
+[2026-01-06T14:43:23.370Z] INFO Invoking mobile_get_screen_size with args: {"device":"9bb14caf"}
+[2026-01-06T14:43:23.618Z] INFO => Screen size is 1080x2412 pixels
+[2026-01-06T14:44:01.821Z] INFO mobile-mcp server running on stdio
+[2026-01-06T14:44:01.871Z] INFO Invoking mobile_list_available_devices with args: {"noParams":{}}
+[2026-01-06T14:44:02.810Z] INFO => {"devices":[{"id":"9bb14caf","name":"CPH2173","platform":"android","type":"emulator","version":"14","state":"online"},{"id":"emulator-5554","name":"Pixel 9 Pro","platform":"android","type":"emulator","version":"16","state":"online"}]}
+[2026-01-06T14:44:03.689Z] INFO Invoking mobile_get_screen_size with args: {"device":"9bb14caf"}
+[2026-01-06T14:44:03.970Z] INFO => Screen size is 1080x2412 pixels
+[2026-01-06T14:44:04.203Z] INFO Invoking mobile_list_available_devices with args: {"noParams":{}}
+[2026-01-06T14:44:05.043Z] INFO => {"devices":[{"id":"9bb14caf","name":"CPH2173","platform":"android","type":"emulator","version":"14","state":"online"},{"id":"emulator-5554","name":"Pixel 9 Pro","platform":"android","type":"emulator","version":"16","state":"online"}]}
+[2026-01-06T14:44:06.058Z] INFO Invoking mobile_get_screen_size with args: {"device":"9bb14caf"}
+[2026-01-06T14:44:06.399Z] INFO => Screen size is 1080x2412 pixels
+[2026-01-06T14:44:27.659Z] INFO mobile-mcp server running on stdio
+[2026-01-06T14:44:27.709Z] INFO Invoking mobile_list_available_devices with args: {"noParams":{}}
+[2026-01-06T14:44:28.700Z] INFO => {"devices":[{"id":"9bb14caf","name":"CPH2173","platform":"android","type":"emulator","version":"14","state":"online"},{"id":"emulator-5554","name":"Pixel 9 Pro","platform":"android","type":"emulator","version":"16","state":"online"}]}
+[2026-01-06T14:44:29.349Z] INFO Invoking mobile_get_screen_size with args: {"device":"9bb14caf"}
+[2026-01-06T14:44:29.647Z] INFO => Screen size is 1080x2412 pixels
+[2026-01-06T14:44:31.446Z] INFO Invoking mobile_list_available_devices with args: {"noParams":{}}
+[2026-01-06T14:44:32.380Z] INFO => {"devices":[{"id":"9bb14caf","name":"CPH2173","platform":"android","type":"emulator","version":"14","state":"online"},{"id":"emulator-5554","name":"Pixel 9 Pro","platform":"android","type":"emulator","version":"16","state":"online"}]}
+[2026-01-06T14:44:33.392Z] INFO Invoking mobile_get_screen_size with args: {"device":"9bb14caf"}
+[2026-01-06T14:44:33.718Z] INFO => Screen size is 1080x2412 pixels
+[2026-01-06T14:45:08.525Z] INFO mobile-mcp server running on stdio
+[2026-01-06T14:45:08.577Z] INFO Invoking mobile_list_available_devices with args: {"noParams":{}}
+[2026-01-06T14:45:09.625Z] INFO => {"devices":[{"id":"9bb14caf","name":"CPH2173","platform":"android","type":"emulator","version":"14","state":"online"},{"id":"emulator-5554","name":"Pixel 9 Pro","platform":"android","type":"emulator","version":"16","state":"online"}]}
+[2026-01-06T14:45:09.637Z] INFO Invoking mobile_get_screen_size with args: {"device":"9bb14caf"}
+[2026-01-06T14:45:09.981Z] INFO => Screen size is 1080x2412 pixels
+[2026-01-06T14:45:11.683Z] INFO Invoking mobile_list_available_devices with args: {"noParams":{}}
+[2026-01-06T14:45:12.639Z] INFO => {"devices":[{"id":"9bb14caf","name":"CPH2173","platform":"android","type":"emulator","version":"14","state":"online"},{"id":"emulator-5554","name":"Pixel 9 Pro","platform":"android","type":"emulator","version":"16","state":"online"}]}
+[2026-01-06T14:45:13.653Z] INFO Invoking mobile_get_screen_size with args: {"device":"9bb14caf"}
+[2026-01-06T14:45:13.994Z] INFO => Screen size is 1080x2412 pixels
+[2026-01-06T14:47:56.794Z] INFO mobile-mcp server running on stdio
+[2026-01-06T14:47:56.845Z] INFO Invoking mobile_list_available_devices with args: {"noParams":{}}
+[2026-01-06T14:47:57.886Z] INFO => {"devices":[{"id":"9bb14caf","name":"CPH2173","platform":"android","type":"emulator","version":"14","state":"online"},{"id":"emulator-5554","name":"Pixel 9 Pro","platform":"android","type":"emulator","version":"16","state":"online"}]}
+[2026-01-06T14:47:58.710Z] INFO Invoking mobile_get_screen_size with args: {"device":"9bb14caf"}
+[2026-01-06T14:47:59.062Z] INFO => Screen size is 1080x2412 pixels
+[2026-01-06T14:49:11.945Z] INFO mobile-mcp server running on stdio
+[2026-01-06T14:49:11.996Z] INFO Invoking mobile_list_available_devices with args: {"noParams":{}}
+[2026-01-06T14:49:13.066Z] INFO => {"devices":[{"id":"9bb14caf","name":"CPH2173","platform":"android","type":"emulator","version":"14","state":"online"},{"id":"emulator-5554","name":"Pixel 9 Pro","platform":"android","type":"emulator","version":"16","state":"online"}]}
+[2026-01-06T14:49:15.118Z] INFO Invoking mobile_get_screen_size with args: {"device":"9bb14caf"}
+[2026-01-06T14:49:15.451Z] INFO => Screen size is 1080x2412 pixels
+[2026-01-06T14:49:17.124Z] INFO Invoking mobile_list_available_devices with args: {"noParams":{}}
+[2026-01-06T14:49:17.906Z] INFO => {"devices":[{"id":"9bb14caf","name":"CPH2173","platform":"android","type":"emulator","version":"14","state":"online"},{"id":"emulator-5554","name":"Pixel 9 Pro","platform":"android","type":"emulator","version":"16","state":"online"}]}
+[2026-01-06T14:49:18.917Z] INFO Invoking mobile_get_screen_size with args: {"device":"9bb14caf"}
+[2026-01-06T14:49:19.221Z] INFO => Screen size is 1080x2412 pixels
+[2026-01-06T14:49:45.457Z] INFO mobile-mcp server running on stdio
+[2026-01-06T14:49:45.507Z] INFO Invoking mobile_list_available_devices with args: {"noParams":{}}
+[2026-01-06T14:49:46.435Z] INFO => {"devices":[{"id":"9bb14caf","name":"CPH2173","platform":"android","type":"emulator","version":"14","state":"online"},{"id":"emulator-5554","name":"Pixel 9 Pro","platform":"android","type":"emulator","version":"16","state":"online"}]}
+[2026-01-06T14:49:48.048Z] INFO Invoking mobile_get_screen_size with args: {"device":"9bb14caf"}
+[2026-01-06T14:49:48.436Z] INFO => Screen size is 1080x2412 pixels
+[2026-01-06T14:49:49.074Z] INFO Invoking mobile_list_available_devices with args: {"noParams":{}}
+[2026-01-06T14:49:50.022Z] INFO => {"devices":[{"id":"9bb14caf","name":"CPH2173","platform":"android","type":"emulator","version":"14","state":"online"},{"id":"emulator-5554","name":"Pixel 9 Pro","platform":"android","type":"emulator","version":"16","state":"online"}]}
+[2026-01-06T14:49:51.031Z] INFO Invoking mobile_get_screen_size with args: {"device":"9bb14caf"}
+[2026-01-06T14:49:51.355Z] INFO => Screen size is 1080x2412 pixels
+[2026-01-06T14:58:38.322Z] INFO mobile-mcp server running on stdio
+[2026-01-06T14:58:38.373Z] INFO Invoking mobile_list_available_devices with args: {"noParams":{}}
+[2026-01-06T14:58:39.419Z] INFO => {"devices":[{"id":"9bb14caf","name":"CPH2173","platform":"android","type":"emulator","version":"14","state":"online"},{"id":"emulator-5554","name":"Pixel 9 Pro","platform":"android","type":"emulator","version":"16","state":"online"}]}
+[2026-01-06T14:58:40.584Z] INFO Invoking mobile_get_screen_size with args: {"device":"9bb14caf"}
+[2026-01-06T14:58:40.957Z] INFO => Screen size is 1080x2412 pixels
+[2026-01-06T14:58:40.974Z] INFO Invoking mobile_list_available_devices with args: {"noParams":{}}
+[2026-01-06T14:58:41.906Z] INFO => {"devices":[{"id":"9bb14caf","name":"CPH2173","platform":"android","type":"emulator","version":"14","state":"online"},{"id":"emulator-5554","name":"Pixel 9 Pro","platform":"android","type":"emulator","version":"16","state":"online"}]}
+[2026-01-06T14:58:41.911Z] INFO Invoking mobile_terminate_app with args: {"device":"9bb14caf","packageName":"com.zhiliaoapp.musically"}
+[2026-01-06T14:58:42.372Z] INFO => Terminated app com.zhiliaoapp.musically
+[2026-01-06T14:58:43.386Z] INFO Invoking mobile_get_screen_size with args: {"device":"9bb14caf"}
+[2026-01-06T14:58:43.768Z] INFO => Screen size is 1080x2412 pixels
+[2026-01-06T14:58:43.772Z] INFO Invoking mobile_launch_app with args: {"device":"9bb14caf","packageName":"com.zhiliaoapp.musically"}
+[2026-01-06T14:58:46.253Z] INFO => Launched app com.zhiliaoapp.musically
+[2026-01-06T14:58:51.262Z] INFO Invoking mobile_get_current_app with args: {"device":"9bb14caf"}
+[2026-01-06T14:58:51.561Z] INFO Invoking mobile_click_on_screen_at_coordinates with args: {"device":"9bb14caf","x":810,"y":169}
+[2026-01-06T14:58:51.831Z] INFO => Clicked on screen at coordinates: 810, 169
+[2026-01-06T14:58:55.781Z] INFO Invoking mobile_press_button with args: {"device":"9bb14caf","button":"HOME"}
+[2026-01-06T14:58:56.154Z] INFO => Pressed the button: HOME
+[2026-01-06T15:04:17.358Z] INFO mobile-mcp server running on stdio
+[2026-01-06T15:04:17.408Z] INFO Invoking mobile_list_available_devices with args: {"noParams":{}}
+[2026-01-06T15:04:18.085Z] INFO => {"devices":[{"id":"9bb14caf","name":"CPH2173","platform":"android","type":"emulator","version":"14","state":"online"},{"id":"emulator-5554","name":"Pixel 9 Pro","platform":"android","type":"emulator","version":"16","state":"online"}]}
+[2026-01-06T15:04:19.257Z] INFO Invoking mobile_get_screen_size with args: {"device":"9bb14caf"}
+[2026-01-06T15:04:19.521Z] INFO => Screen size is 1080x2412 pixels
+[2026-01-06T15:04:20.473Z] INFO Invoking mobile_list_available_devices with args: {"noParams":{}}
+[2026-01-06T15:04:21.108Z] INFO => {"devices":[{"id":"9bb14caf","name":"CPH2173","platform":"android","type":"emulator","version":"14","state":"online"},{"id":"emulator-5554","name":"Pixel 9 Pro","platform":"android","type":"emulator","version":"16","state":"online"}]}
+[2026-01-06T15:04:21.113Z] INFO Invoking mobile_terminate_app with args: {"device":"9bb14caf","packageName":"com.zhiliaoapp.musically"}
+[2026-01-06T15:04:21.424Z] INFO => Terminated app com.zhiliaoapp.musically
+[2026-01-06T15:04:22.429Z] INFO Invoking mobile_get_screen_size with args: {"device":"9bb14caf"}
+[2026-01-06T15:04:22.675Z] INFO => Screen size is 1080x2412 pixels
+[2026-01-06T15:04:22.678Z] INFO Invoking mobile_launch_app with args: {"device":"9bb14caf","packageName":"com.zhiliaoapp.musically"}
+[2026-01-06T15:04:24.459Z] INFO => Launched app com.zhiliaoapp.musically
+[2026-01-06T15:04:29.474Z] INFO Invoking mobile_click_on_screen_at_coordinates with args: {"device":"9bb14caf","x":810,"y":169}
+[2026-01-06T15:04:29.699Z] INFO => Clicked on screen at coordinates: 810, 169
+[2026-01-06T15:04:38.617Z] INFO mobile-mcp server running on stdio
+[2026-01-06T15:04:38.668Z] INFO Invoking mobile_list_available_devices with args: {"noParams":{}}
+[2026-01-06T15:04:39.579Z] INFO => {"devices":[{"id":"9bb14caf","name":"CPH2173","platform":"android","type":"emulator","version":"14","state":"online"},{"id":"emulator-5554","name":"Pixel 9 Pro","platform":"android","type":"emulator","version":"16","state":"online"}]}
+[2026-01-06T15:04:40.989Z] INFO Invoking mobile_get_screen_size with args: {"device":"9bb14caf"}
+[2026-01-06T15:04:41.335Z] INFO => Screen size is 1080x2412 pixels
+[2026-01-06T15:04:42.159Z] INFO Invoking mobile_list_available_devices with args: {"noParams":{}}
+[2026-01-06T15:04:43.005Z] INFO => {"devices":[{"id":"9bb14caf","name":"CPH2173","platform":"android","type":"emulator","version":"14","state":"online"},{"id":"emulator-5554","name":"Pixel 9 Pro","platform":"android","type":"emulator","version":"16","state":"online"}]}
+[2026-01-06T15:04:43.010Z] INFO Invoking mobile_terminate_app with args: {"device":"9bb14caf","packageName":"com.zhiliaoapp.musically"}
+[2026-01-06T15:04:43.379Z] INFO => Terminated app com.zhiliaoapp.musically
+[2026-01-06T15:04:44.390Z] INFO Invoking mobile_get_screen_size with args: {"device":"9bb14caf"}
+[2026-01-06T15:04:44.757Z] INFO => Screen size is 1080x2412 pixels
+[2026-01-06T15:04:44.764Z] INFO Invoking mobile_launch_app with args: {"device":"9bb14caf","packageName":"com.zhiliaoapp.musically"}
+[2026-01-06T15:04:46.001Z] INFO => Launched app com.zhiliaoapp.musically
+[2026-01-06T15:04:51.008Z] INFO Invoking mobile_click_on_screen_at_coordinates with args: {"device":"9bb14caf","x":810,"y":169}
+[2026-01-06T15:04:51.266Z] INFO => Clicked on screen at coordinates: 810, 169
+[2026-01-06T15:04:57.348Z] INFO Image scaling is available, resizing screenshot
+[2026-01-06T15:04:57.353Z] INFO Running sips command: /usr/bin/sips -s format jpeg -s formatOptions high -Z 1080 --out /var/folders/dj/v13xhwx9357ddmthx2qjhp1h0000gn/T/image-tfQZVK/output.jpg /var/folders/dj/v13xhwx9357ddmthx2qjhp1h0000gn/T/image-tfQZVK/input
+[2026-01-06T15:04:57.417Z] INFO Sips returned buffer of size: 114250
+[2026-01-06T15:04:57.418Z] INFO Screenshot resized from 1764575 bytes to 114250 bytes
+[2026-01-06T15:04:57.418Z] INFO Screenshot taken: 114250 bytes
+[2026-01-06T15:04:57.452Z] INFO Invoking mobile_press_button with args: {"device":"9bb14caf","button":"HOME"}
+[2026-01-06T15:04:57.782Z] INFO => Pressed the button: HOME
+[2026-01-06T15:07:06.496Z] INFO mobile-mcp server running on stdio
+[2026-01-06T15:07:06.549Z] INFO Invoking mobile_list_available_devices with args: {"noParams":{}}
+[2026-01-06T15:07:07.430Z] INFO => {"devices":[{"id":"9bb14caf","name":"CPH2173","platform":"android","type":"emulator","version":"14","state":"online"},{"id":"emulator-5554","name":"Pixel 9 Pro","platform":"android","type":"emulator","version":"16","state":"online"}]}
+[2026-01-06T15:07:10.204Z] INFO Invoking mobile_get_screen_size with args: {"device":"9bb14caf"}
+[2026-01-06T15:07:10.471Z] INFO => Screen size is 1080x2412 pixels
+[2026-01-06T15:07:12.112Z] INFO Invoking mobile_list_available_devices with args: {"noParams":{}}
+[2026-01-06T15:07:12.929Z] INFO => {"devices":[{"id":"9bb14caf","name":"CPH2173","platform":"android","type":"emulator","version":"14","state":"online"},{"id":"emulator-5554","name":"Pixel 9 Pro","platform":"android","type":"emulator","version":"16","state":"online"}]}
+[2026-01-06T15:07:12.935Z] INFO Invoking mobile_terminate_app with args: {"device":"9bb14caf","packageName":"com.zhiliaoapp.musically"}
+[2026-01-06T15:07:13.388Z] INFO => Terminated app com.zhiliaoapp.musically
+[2026-01-06T15:07:14.395Z] INFO Invoking mobile_get_screen_size with args: {"device":"9bb14caf"}
+[2026-01-06T15:07:14.723Z] INFO => Screen size is 1080x2412 pixels
+[2026-01-06T15:07:14.728Z] INFO Invoking mobile_launch_app with args: {"device":"9bb14caf","packageName":"com.zhiliaoapp.musically"}
+[2026-01-06T15:07:16.165Z] INFO => Launched app com.zhiliaoapp.musically
+[2026-01-06T15:07:21.181Z] INFO Invoking mobile_click_on_screen_at_coordinates with args: {"device":"9bb14caf","x":810,"y":169}
+[2026-01-06T15:07:21.453Z] INFO => Clicked on screen at coordinates: 810, 169
+[2026-01-06T15:07:27.991Z] INFO Image scaling is available, resizing screenshot
+[2026-01-06T15:07:27.995Z] INFO Running sips command: /usr/bin/sips -s format jpeg -s formatOptions high -Z 1080 --out /var/folders/dj/v13xhwx9357ddmthx2qjhp1h0000gn/T/image-S0OgUp/output.jpg /var/folders/dj/v13xhwx9357ddmthx2qjhp1h0000gn/T/image-S0OgUp/input
+[2026-01-06T15:07:28.052Z] INFO Sips returned buffer of size: 86744
+[2026-01-06T15:07:28.053Z] INFO Screenshot resized from 1480245 bytes to 86744 bytes
+[2026-01-06T15:07:28.053Z] INFO Screenshot taken: 86744 bytes
+[2026-01-06T15:07:30.815Z] INFO Invoking mobile_double_tap_on_screen with args: {"device":"9bb14caf","x":540,"y":1025}
+[2026-01-06T15:07:31.325Z] INFO => Double-tapped on screen at coordinates: 540, 1025
+[2026-01-06T15:07:32.882Z] INFO Invoking mobile_swipe_on_screen with args: {"device":"9bb14caf","direction":"up","x":540,"y":1688}
+[2026-01-06T15:07:34.241Z] INFO => Swiped up from coordinates: 540, 1688
+[2026-01-06T15:07:38.037Z] INFO Image scaling is available, resizing screenshot
+[2026-01-06T15:07:38.041Z] INFO Running sips command: /usr/bin/sips -s format jpeg -s formatOptions high -Z 1080 --out /var/folders/dj/v13xhwx9357ddmthx2qjhp1h0000gn/T/image-fNlYEb/output.jpg /var/folders/dj/v13xhwx9357ddmthx2qjhp1h0000gn/T/image-fNlYEb/input
+[2026-01-06T15:07:38.097Z] INFO Sips returned buffer of size: 88839
+[2026-01-06T15:07:38.097Z] INFO Screenshot resized from 1701501 bytes to 88839 bytes
+[2026-01-06T15:07:38.098Z] INFO Screenshot taken: 88839 bytes
+[2026-01-06T15:07:40.984Z] INFO Invoking mobile_double_tap_on_screen with args: {"device":"9bb14caf","x":400,"y":1100}
+[2026-01-06T15:07:41.421Z] INFO => Double-tapped on screen at coordinates: 400, 1100
+[2026-01-06T15:07:43.867Z] INFO Invoking mobile_swipe_on_screen with args: {"device":"9bb14caf","direction":"up","x":540,"y":1688}
+[2026-01-06T15:07:45.195Z] INFO => Swiped up from coordinates: 540, 1688
+[2026-01-06T15:07:50.126Z] INFO Image scaling is available, resizing screenshot
+[2026-01-06T15:07:50.129Z] INFO Running sips command: /usr/bin/sips -s format jpeg -s formatOptions high -Z 1080 --out /var/folders/dj/v13xhwx9357ddmthx2qjhp1h0000gn/T/image-Tmjjnk/output.jpg /var/folders/dj/v13xhwx9357ddmthx2qjhp1h0000gn/T/image-Tmjjnk/input
+[2026-01-06T15:07:50.191Z] INFO Sips returned buffer of size: 132545
+[2026-01-06T15:07:50.191Z] INFO Screenshot resized from 2151670 bytes to 132545 bytes
+[2026-01-06T15:07:50.191Z] INFO Screenshot taken: 132545 bytes
+[2026-01-06T15:07:52.638Z] INFO Invoking mobile_double_tap_on_screen with args: {"device":"9bb14caf","x":700,"y":900}
+[2026-01-06T15:07:53.133Z] INFO => Double-tapped on screen at coordinates: 700, 900
+[2026-01-06T15:07:56.758Z] INFO Invoking mobile_swipe_on_screen with args: {"device":"9bb14caf","direction":"up","x":540,"y":1688}
+[2026-01-06T15:07:58.200Z] INFO => Swiped up from coordinates: 540, 1688
+[2026-01-06T15:08:02.296Z] INFO Image scaling is available, resizing screenshot
+[2026-01-06T15:08:02.300Z] INFO Running sips command: /usr/bin/sips -s format jpeg -s formatOptions high -Z 1080 --out /var/folders/dj/v13xhwx9357ddmthx2qjhp1h0000gn/T/image-BohkKR/output.jpg /var/folders/dj/v13xhwx9357ddmthx2qjhp1h0000gn/T/image-BohkKR/input
+[2026-01-06T15:08:02.361Z] INFO Sips returned buffer of size: 134682
+[2026-01-06T15:08:02.362Z] INFO Screenshot resized from 2204153 bytes to 134682 bytes
+[2026-01-06T15:08:02.362Z] INFO Screenshot taken: 134682 bytes
+[2026-01-06T15:08:05.482Z] INFO Invoking mobile_double_tap_on_screen with args: {"device":"9bb14caf","x":350,"y":1200}
+[2026-01-06T15:08:05.984Z] INFO => Double-tapped on screen at coordinates: 350, 1200
+[2026-01-06T15:09:03.638Z] INFO Invoking mobile_swipe_on_screen with args: {"device":"9bb14caf","direction":"up","x":540,"y":1688}
+[2026-01-06T15:09:05.176Z] INFO => Swiped up from coordinates: 540, 1688
+[2026-01-06T15:09:08.973Z] INFO Image scaling is available, resizing screenshot
+[2026-01-06T15:09:08.978Z] INFO Running sips command: /usr/bin/sips -s format jpeg -s formatOptions high -Z 1080 --out /var/folders/dj/v13xhwx9357ddmthx2qjhp1h0000gn/T/image-rrvZGi/output.jpg /var/folders/dj/v13xhwx9357ddmthx2qjhp1h0000gn/T/image-rrvZGi/input
+[2026-01-06T15:09:09.043Z] INFO Sips returned buffer of size: 117121
+[2026-01-06T15:09:09.044Z] INFO Screenshot resized from 1785006 bytes to 117121 bytes
+[2026-01-06T15:09:09.044Z] INFO Screenshot taken: 117121 bytes
+[2026-01-06T15:15:12.825Z] INFO mobile-mcp server running on stdio
+[2026-01-06T15:15:12.876Z] INFO Invoking mobile_list_available_devices with args: {"noParams":{}}
+[2026-01-06T15:15:13.960Z] INFO => {"devices":[{"id":"9bb14caf","name":"CPH2173","platform":"android","type":"emulator","version":"14","state":"online"},{"id":"emulator-5554","name":"Pixel 9 Pro","platform":"android","type":"emulator","version":"16","state":"online"}]}
+[2026-01-06T15:15:15.298Z] INFO Invoking mobile_get_screen_size with args: {"device":"9bb14caf"}
+[2026-01-06T15:15:15.645Z] INFO => Screen size is 1080x2412 pixels
+[2026-01-06T15:15:16.843Z] INFO Invoking mobile_list_available_devices with args: {"noParams":{}}
+[2026-01-06T15:15:17.738Z] INFO => {"devices":[{"id":"9bb14caf","name":"CPH2173","platform":"android","type":"emulator","version":"14","state":"online"},{"id":"emulator-5554","name":"Pixel 9 Pro","platform":"android","type":"emulator","version":"16","state":"online"}]}
+[2026-01-06T15:15:17.744Z] INFO Invoking mobile_terminate_app with args: {"device":"9bb14caf","packageName":"com.zhiliaoapp.musically"}
+[2026-01-06T15:15:18.219Z] INFO => Terminated app com.zhiliaoapp.musically
+[2026-01-06T15:15:19.226Z] INFO Invoking mobile_get_screen_size with args: {"device":"9bb14caf"}
+[2026-01-06T15:15:19.532Z] INFO => Screen size is 1080x2412 pixels
+[2026-01-06T15:15:19.536Z] INFO Invoking mobile_launch_app with args: {"device":"9bb14caf","packageName":"com.zhiliaoapp.musically"}
+[2026-01-06T15:15:21.663Z] INFO => Launched app com.zhiliaoapp.musically
+[2026-01-06T15:15:26.678Z] INFO Invoking mobile_click_on_screen_at_coordinates with args: {"device":"9bb14caf","x":810,"y":169}
+[2026-01-06T15:15:26.955Z] INFO => Clicked on screen at coordinates: 810, 169
+[2026-01-06T15:15:33.552Z] INFO Image scaling is available, resizing screenshot
+[2026-01-06T15:15:33.556Z] INFO Running sips command: /usr/bin/sips -s format jpeg -s formatOptions high -Z 1080 --out /var/folders/dj/v13xhwx9357ddmthx2qjhp1h0000gn/T/image-plFZGA/output.jpg /var/folders/dj/v13xhwx9357ddmthx2qjhp1h0000gn/T/image-plFZGA/input
+[2026-01-06T15:15:33.617Z] INFO Sips returned buffer of size: 135617
+[2026-01-06T15:15:33.618Z] INFO Screenshot resized from 2208536 bytes to 135617 bytes
+[2026-01-06T15:15:33.618Z] INFO Screenshot taken: 135617 bytes
+[2026-01-06T15:15:37.190Z] INFO Invoking mobile_double_tap_on_screen with args: {"device":"9bb14caf","x":540,"y":1025}
+[2026-01-06T15:15:37.712Z] INFO => Double-tapped on screen at coordinates: 540, 1025
+[2026-01-06T15:15:41.705Z] INFO Invoking mobile_swipe_on_screen with args: {"device":"9bb14caf","direction":"up"}
+[2026-01-06T15:15:43.125Z] INFO => Swiped up on screen
+[2026-01-06T15:15:49.034Z] INFO Image scaling is available, resizing screenshot
+[2026-01-06T15:15:49.038Z] INFO Running sips command: /usr/bin/sips -s format jpeg -s formatOptions high -Z 1080 --out /var/folders/dj/v13xhwx9357ddmthx2qjhp1h0000gn/T/image-9v5jOk/output.jpg /var/folders/dj/v13xhwx9357ddmthx2qjhp1h0000gn/T/image-9v5jOk/input
+[2026-01-06T15:15:49.086Z] INFO Sips returned buffer of size: 103146
+[2026-01-06T15:15:49.087Z] INFO Screenshot resized from 1260825 bytes to 103146 bytes
+[2026-01-06T15:15:49.087Z] INFO Screenshot taken: 103146 bytes
+[2026-01-06T15:15:53.487Z] INFO Invoking mobile_double_tap_on_screen with args: {"device":"9bb14caf","x":400,"y":1100}
+[2026-01-06T15:15:54.036Z] INFO => Double-tapped on screen at coordinates: 400, 1100
+[2026-01-06T15:15:55.223Z] INFO Invoking mobile_swipe_on_screen with args: {"device":"9bb14caf","direction":"up"}
+[2026-01-06T15:15:56.652Z] INFO => Swiped up on screen
+[2026-01-06T15:16:00.555Z] INFO Image scaling is available, resizing screenshot
+[2026-01-06T15:16:00.559Z] INFO Running sips command: /usr/bin/sips -s format jpeg -s formatOptions high -Z 1080 --out /var/folders/dj/v13xhwx9357ddmthx2qjhp1h0000gn/T/image-2YlB4G/output.jpg /var/folders/dj/v13xhwx9357ddmthx2qjhp1h0000gn/T/image-2YlB4G/input
+[2026-01-06T15:16:00.619Z] INFO Sips returned buffer of size: 122329
+[2026-01-06T15:16:00.619Z] INFO Screenshot resized from 1674079 bytes to 122329 bytes
+[2026-01-06T15:16:00.619Z] INFO Screenshot taken: 122329 bytes
+[2026-01-06T15:16:57.730Z] INFO mobile-mcp server running on stdio
+[2026-01-06T15:16:57.780Z] INFO Invoking mobile_list_available_devices with args: {"noParams":{}}
+[2026-01-06T15:16:58.658Z] INFO => {"devices":[{"id":"9bb14caf","name":"CPH2173","platform":"android","type":"emulator","version":"14","state":"online"},{"id":"emulator-5554","name":"Pixel 9 Pro","platform":"android","type":"emulator","version":"16","state":"online"}]}
+[2026-01-06T15:17:00.855Z] INFO Invoking mobile_get_screen_size with args: {"device":"9bb14caf"}
+[2026-01-06T15:17:01.213Z] INFO => Screen size is 1080x2412 pixels
+[2026-01-06T15:17:04.284Z] INFO Invoking mobile_list_available_devices with args: {"noParams":{}}
+[2026-01-06T15:17:05.108Z] INFO => {"devices":[{"id":"9bb14caf","name":"CPH2173","platform":"android","type":"emulator","version":"14","state":"online"},{"id":"emulator-5554","name":"Pixel 9 Pro","platform":"android","type":"emulator","version":"16","state":"online"}]}
+[2026-01-06T15:17:05.114Z] INFO Invoking mobile_terminate_app with args: {"device":"9bb14caf","packageName":"com.zhiliaoapp.musically"}
+[2026-01-06T15:17:05.615Z] INFO => Terminated app com.zhiliaoapp.musically
+[2026-01-06T15:17:06.626Z] INFO Invoking mobile_get_screen_size with args: {"device":"9bb14caf"}
+[2026-01-06T15:17:06.973Z] INFO => Screen size is 1080x2412 pixels
+[2026-01-06T15:17:06.977Z] INFO Invoking mobile_launch_app with args: {"device":"9bb14caf","packageName":"com.zhiliaoapp.musically"}
+[2026-01-06T15:17:08.614Z] INFO => Launched app com.zhiliaoapp.musically
+[2026-01-06T15:17:13.625Z] INFO Invoking mobile_click_on_screen_at_coordinates with args: {"device":"9bb14caf","x":810,"y":169}
+[2026-01-06T15:17:13.946Z] INFO => Clicked on screen at coordinates: 810, 169
+[2026-01-06T15:17:20.657Z] INFO Image scaling is available, resizing screenshot
+[2026-01-06T15:17:20.662Z] INFO Running sips command: /usr/bin/sips -s format jpeg -s formatOptions high -Z 1080 --out /var/folders/dj/v13xhwx9357ddmthx2qjhp1h0000gn/T/image-CaJazW/output.jpg /var/folders/dj/v13xhwx9357ddmthx2qjhp1h0000gn/T/image-CaJazW/input
+[2026-01-06T15:17:20.723Z] INFO Sips returned buffer of size: 121447
+[2026-01-06T15:17:20.724Z] INFO Screenshot resized from 2572927 bytes to 121447 bytes
+[2026-01-06T15:17:20.724Z] INFO Screenshot taken: 121447 bytes
+[2026-01-06T15:17:24.119Z] INFO Invoking mobile_double_tap_on_screen with args: {"device":"9bb14caf","x":540,"y":1025}
+[2026-01-06T15:17:24.674Z] INFO => Double-tapped on screen at coordinates: 540, 1025
+[2026-01-06T15:17:26.574Z] INFO Invoking mobile_swipe_on_screen with args: {"device":"9bb14caf","direction":"up"}
+[2026-01-06T15:17:27.996Z] INFO => Swiped up on screen
+[2026-01-06T15:17:32.937Z] INFO Image scaling is available, resizing screenshot
+[2026-01-06T15:17:32.942Z] INFO Running sips command: /usr/bin/sips -s format jpeg -s formatOptions high -Z 1080 --out /var/folders/dj/v13xhwx9357ddmthx2qjhp1h0000gn/T/image-QWK0Z1/output.jpg /var/folders/dj/v13xhwx9357ddmthx2qjhp1h0000gn/T/image-QWK0Z1/input
+[2026-01-06T15:17:33.002Z] INFO Sips returned buffer of size: 115001
+[2026-01-06T15:17:33.002Z] INFO Screenshot resized from 1958416 bytes to 115001 bytes
+[2026-01-06T15:17:33.002Z] INFO Screenshot taken: 115001 bytes
+[2026-01-06T15:17:36.211Z] INFO Invoking mobile_double_tap_on_screen with args: {"device":"9bb14caf","x":400,"y":1100}
+[2026-01-06T15:17:36.746Z] INFO => Double-tapped on screen at coordinates: 400, 1100
+[2026-01-06T15:17:38.121Z] INFO Invoking mobile_swipe_on_screen with args: {"device":"9bb14caf","direction":"up"}
+[2026-01-06T15:17:39.598Z] INFO => Swiped up on screen
+[2026-01-06T15:17:43.759Z] INFO Image scaling is available, resizing screenshot
+[2026-01-06T15:17:43.763Z] INFO Running sips command: /usr/bin/sips -s format jpeg -s formatOptions high -Z 1080 --out /var/folders/dj/v13xhwx9357ddmthx2qjhp1h0000gn/T/image-t7xio1/output.jpg /var/folders/dj/v13xhwx9357ddmthx2qjhp1h0000gn/T/image-t7xio1/input
+[2026-01-06T15:17:43.823Z] INFO Sips returned buffer of size: 134018
+[2026-01-06T15:17:43.824Z] INFO Screenshot resized from 2173384 bytes to 134018 bytes
+[2026-01-06T15:17:43.824Z] INFO Screenshot taken: 134018 bytes
+[2026-01-06T15:17:46.912Z] INFO Invoking mobile_double_tap_on_screen with args: {"device":"9bb14caf","x":600,"y":950}
+[2026-01-06T15:17:47.409Z] INFO => Double-tapped on screen at coordinates: 600, 950
+[2026-01-06T15:18:32.873Z] INFO Invoking mobile_swipe_on_screen with args: {"device":"9bb14caf","direction":"up"}
+[2026-01-06T15:18:34.322Z] INFO => Swiped up on screen
+[2026-01-06T15:52:12.850Z] INFO mobile-mcp server running on stdio
+[2026-01-06T15:52:12.899Z] INFO Invoking mobile_list_available_devices with args: {"noParams":{}}
+[2026-01-06T15:52:16.671Z] INFO => {"devices":[{"id":"9bb14caf","name":"CPH2173","platform":"android","type":"emulator","version":"14","state":"online"}]}
+[2026-01-06T15:52:16.676Z] INFO Invoking mobile_get_screen_size with args: {"device":"9bb14caf"}
+[2026-01-06T15:52:16.921Z] INFO => Screen size is 1080x2412 pixels
+[2026-01-06T15:52:20.710Z] INFO Invoking mobile_list_available_devices with args: {"noParams":{}}
+[2026-01-06T15:52:21.374Z] INFO => {"devices":[{"id":"9bb14caf","name":"CPH2173","platform":"android","type":"emulator","version":"14","state":"online"}]}
+[2026-01-06T15:52:21.382Z] INFO Invoking mobile_terminate_app with args: {"device":"9bb14caf","packageName":"com.zhiliaoapp.musically"}
+[2026-01-06T15:52:21.682Z] INFO => Terminated app com.zhiliaoapp.musically
+[2026-01-06T15:52:22.689Z] INFO Invoking mobile_get_screen_size with args: {"device":"9bb14caf"}
+[2026-01-06T15:52:22.926Z] INFO => Screen size is 1080x2412 pixels
+[2026-01-06T15:52:22.931Z] INFO Invoking mobile_launch_app with args: {"device":"9bb14caf","packageName":"com.zhiliaoapp.musically"}
+[2026-01-06T15:52:25.291Z] INFO => Launched app com.zhiliaoapp.musically
+[2026-01-06T15:52:30.298Z] INFO Invoking mobile_click_on_screen_at_coordinates with args: {"device":"9bb14caf","x":810,"y":169}
+[2026-01-06T15:52:30.522Z] INFO => Clicked on screen at coordinates: 810, 169
+[2026-01-06T15:52:32.536Z] INFO Invoking mobile_list_elements_on_screen with args: {"device":"9bb14caf"}
+[2026-01-06T15:52:44.565Z] INFO Tool 'List elements on screen and their coordinates, with display text or accessibility label. Do not cache this result.' failed: Cannot read properties of undefined (reading 'node') stack: TypeError: Cannot read properties of undefined (reading 'node')
+    at AndroidRobot.getElementsOnScreen (/Users/hijodelaluna/KasarLabs/mobile-controller/mobile-mcp/lib/android.js:325:57)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async /Users/hijodelaluna/KasarLabs/mobile-controller/mobile-mcp/lib/server.js:293:26
+    at async /Users/hijodelaluna/KasarLabs/mobile-controller/mobile-mcp/lib/server.js:51:34
+    at async McpServer.executeToolHandler (/Users/hijodelaluna/KasarLabs/mobile-controller/mobile-mcp/node_modules/.pnpm/@modelcontextprotocol+sdk@1.24.2_zod@4.2.1/node_modules/@modelcontextprotocol/sdk/dist/cjs/server/mcp.js:236:20)
+    at async /Users/hijodelaluna/KasarLabs/mobile-controller/mobile-mcp/node_modules/.pnpm/@modelcontextprotocol+sdk@1.24.2_zod@4.2.1/node_modules/@modelcontextprotocol/sdk/dist/cjs/server/mcp.js:129:32
+    at async wrappedHandler (/Users/hijodelaluna/KasarLabs/mobile-controller/mobile-mcp/node_modules/.pnpm/@modelcontextprotocol+sdk@1.24.2_zod@4.2.1/node_modules/@modelcontextprotocol/sdk/dist/cjs/server/index.js:131:32)
+[2026-01-06T15:52:44.586Z] INFO Invoking mobile_press_button with args: {"device":"9bb14caf","button":"HOME"}
+[2026-01-06T15:52:44.884Z] INFO => Pressed the button: HOME
+[2026-01-06T15:53:16.964Z] INFO mobile-mcp server running on stdio
+[2026-01-06T15:53:17.013Z] INFO Invoking mobile_list_available_devices with args: {"noParams":{}}
+[2026-01-06T15:53:17.648Z] INFO => {"devices":[{"id":"9bb14caf","name":"CPH2173","platform":"android","type":"emulator","version":"14","state":"online"}]}
+[2026-01-06T15:53:17.653Z] INFO Invoking mobile_get_screen_size with args: {"device":"9bb14caf"}
+[2026-01-06T15:53:17.904Z] INFO => Screen size is 1080x2412 pixels
+[2026-01-06T15:53:21.688Z] INFO Invoking mobile_list_available_devices with args: {"noParams":{}}
+[2026-01-06T15:53:22.299Z] INFO => {"devices":[{"id":"9bb14caf","name":"CPH2173","platform":"android","type":"emulator","version":"14","state":"online"}]}
+[2026-01-06T15:53:22.305Z] INFO Invoking mobile_terminate_app with args: {"device":"9bb14caf","packageName":"com.zhiliaoapp.musically"}
+[2026-01-06T15:53:22.633Z] INFO => Terminated app com.zhiliaoapp.musically
+[2026-01-06T15:53:23.645Z] INFO Invoking mobile_get_screen_size with args: {"device":"9bb14caf"}
+[2026-01-06T15:53:23.890Z] INFO => Screen size is 1080x2412 pixels
+[2026-01-06T15:53:23.895Z] INFO Invoking mobile_launch_app with args: {"device":"9bb14caf","packageName":"com.zhiliaoapp.musically"}
+[2026-01-06T15:53:25.060Z] INFO => Launched app com.zhiliaoapp.musically
+[2026-01-06T15:53:30.077Z] INFO Invoking mobile_click_on_screen_at_coordinates with args: {"device":"9bb14caf","x":810,"y":169}
+[2026-01-06T15:53:30.312Z] INFO => Clicked on screen at coordinates: 810, 169
+[2026-01-06T15:53:32.324Z] INFO Invoking mobile_list_elements_on_screen with args: {"device":"9bb14caf"}
+[2026-01-06T15:53:35.460Z] INFO => Found these elements on screen: [{"type":"android.view.View","text":"","label":"LIVE","identifier":"com.zhiliaoapp.musically:id/long_press_layout","coordinates":{"x":0,"y":0,"width":1080,"height":2217}},{"type":"android.widget.TextView","text":"Appuie pour regarder le LIVE","label":"","identifier":"com.zhiliaoapp.musically:id/xs4","coordinates":{"x":225,"y":1785,"width":701,"height":66}},{"type":"android.widget.TextView","text":"LIVE maintenant","label":"","identifier":"com.zhiliaoapp.musically:id/h40","coordinates":{"x":51,"y":1947,"width":289,"height":66}},{"type":"android.widget.Button","text":"Buck_lol","label":"","identifier":"com.zhiliaoapp.musically:id/xro","coordinates":{"x":36,"y":2037,"width":196,"height":66}},{"type":"android.widget.TextView","text":"ON MONTE SUR LE SMURF D1 ATM","label":"","identifier":"com.zhiliaoapp.musically:id/xs5","coordinates":{"x":36,"y":2127,"width":691,"height":54}},{"type":"android.widget.TextView","text":"Explorer","label":"","identifier":"android:id/text1","coordinates":{"x":206,"y":96,"width":173,"height":174}},{"type":"android.widget.LinearLayout","text":"","label":"Explorer","coordinates":{"x":206,"y":96,"width":173,"height":174}},{"type":"android.widget.TextView","text":"Suivis","label":"","identifier":"android:id/text1","coordinates":{"x":379,"y":96,"width":134,"height":174}},{"type":"android.widget.FrameLayout","text":"","label":"Suivis","coordinates":{"x":379,"y":96,"width":134,"height":174}},{"type":"android.widget.TextView","text":"Boutique","label":"","identifier":"android:id/text1","coordinates":{"x":513,"y":96,"width":185,"height":174}},{"type":"android.view.ViewGroup","text":"","label":"Boutique","coordinates":{"x":513,"y":96,"width":185,"height":174}},{"type":"android.widget.TextView","text":"Pour toi","label":"","identifier":"android:id/text1","coordinates":{"x":698,"y":96,"width":176,"height":174}},{"type":"android.widget.LinearLayout","text":"","label":"Pour toi","coordinates":{"x":698,"y":96,"width":176,"height":174}},{"type":"android.widget.ImageView","text":"","label":"Rechercher","identifier":"com.zhiliaoapp.musically:id/irz","coordinates":{"x":912,"y":99,"width":168,"height":168}},{"type":"android.widget.TextView","text":"Accueil","label":"","coordinates":{"x":0,"y":2308,"width":216,"height":39}},{"type":"android.widget.FrameLayout","text":"","label":"Accueil","identifier":"com.zhiliaoapp.musically:id/mkq","coordinates":{"x":0,"y":2217,"width":216,"height":147}},{"type":"android.widget.TextView","text":"Ami(e)s","label":"","coordinates":{"x":216,"y":2308,"width":216,"height":39}},{"type":"android.widget.FrameLayout","text":"","label":"Ami(e)s","identifier":"com.zhiliaoapp.musically:id/mkp","coordinates":{"x":216,"y":2217,"width":216,"height":147}},{"type":"android.widget.Button","text":"","label":"Créer","identifier":"com.zhiliaoapp.musically:id/mkn","coordinates":{"x":432,"y":2217,"width":216,"height":147}},{"type":"android.widget.TextView","text":"Messages","label":"","coordinates":{"x":648,"y":2308,"width":216,"height":39}},{"type":"android.widget.FrameLayout","text":"","label":"Messages","identifier":"com.zhiliaoapp.musically:id/mkr","coordinates":{"x":648,"y":2217,"width":216,"height":147}},{"type":"android.widget.TextView","text":"Profil","label":"","coordinates":{"x":864,"y":2308,"width":216,"height":39}},{"type":"android.widget.FrameLayout","text":"","label":"Profil","identifier":"com.zhiliaoapp.musically:id/mks","coordinates":{"x":864,"y":2217,"width":216,"height":147}}]
+[2026-01-06T15:53:38.683Z] INFO Invoking mobile_swipe_on_screen with args: {"device":"9bb14caf","direction":"up"}
+[2026-01-06T15:53:40.092Z] INFO => Swiped up on screen
+[2026-01-06T15:53:45.122Z] INFO Image scaling is available, resizing screenshot
+[2026-01-06T15:53:45.129Z] INFO Running sips command: /usr/bin/sips -s format jpeg -s formatOptions high -Z 1080 --out /var/folders/dj/v13xhwx9357ddmthx2qjhp1h0000gn/T/image-0MHYrQ/output.jpg /var/folders/dj/v13xhwx9357ddmthx2qjhp1h0000gn/T/image-0MHYrQ/input
+[2026-01-06T15:53:45.199Z] INFO Sips returned buffer of size: 101110
+[2026-01-06T15:53:45.200Z] INFO Screenshot resized from 1017073 bytes to 101110 bytes
+[2026-01-06T15:53:45.200Z] INFO Screenshot taken: 101110 bytes
+[2026-01-06T15:53:48.731Z] INFO Invoking mobile_double_tap_on_screen with args: {"device":"9bb14caf","x":540,"y":1025}
+[2026-01-06T15:53:49.243Z] INFO => Double-tapped on screen at coordinates: 540, 1025
+[2026-01-06T15:53:50.964Z] INFO Invoking mobile_swipe_on_screen with args: {"device":"9bb14caf","direction":"up"}
+[2026-01-06T15:53:52.329Z] INFO => Swiped up on screen
+[2026-01-06T15:53:55.957Z] INFO Image scaling is available, resizing screenshot
+[2026-01-06T15:53:55.964Z] INFO Running sips command: /usr/bin/sips -s format jpeg -s formatOptions high -Z 1080 --out /var/folders/dj/v13xhwx9357ddmthx2qjhp1h0000gn/T/image-m874e1/output.jpg /var/folders/dj/v13xhwx9357ddmthx2qjhp1h0000gn/T/image-m874e1/input
+[2026-01-06T15:53:56.034Z] INFO Sips returned buffer of size: 120061
+[2026-01-06T15:53:56.034Z] INFO Screenshot resized from 1750634 bytes to 120061 bytes
+[2026-01-06T15:53:56.034Z] INFO Screenshot taken: 120061 bytes
+[2026-01-06T15:54:00.467Z] INFO Invoking mobile_double_tap_on_screen with args: {"device":"9bb14caf","x":400,"y":900}
+[2026-01-06T15:54:00.943Z] INFO => Double-tapped on screen at coordinates: 400, 900
+[2026-01-06T15:54:07.890Z] INFO Invoking mobile_swipe_on_screen with args: {"device":"9bb14caf","direction":"up"}
+[2026-01-06T15:54:09.300Z] INFO => Swiped up on screen
+[2026-01-06T15:54:12.570Z] INFO Image scaling is available, resizing screenshot
+[2026-01-06T15:54:12.578Z] INFO Running sips command: /usr/bin/sips -s format jpeg -s formatOptions high -Z 1080 --out /var/folders/dj/v13xhwx9357ddmthx2qjhp1h0000gn/T/image-px0p3p/output.jpg /var/folders/dj/v13xhwx9357ddmthx2qjhp1h0000gn/T/image-px0p3p/input
+[2026-01-06T15:54:12.643Z] INFO Sips returned buffer of size: 91938
+[2026-01-06T15:54:12.643Z] INFO Screenshot resized from 1242575 bytes to 91938 bytes
+[2026-01-06T15:54:12.643Z] INFO Screenshot taken: 91938 bytes

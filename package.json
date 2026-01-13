@@ -6,6 +6,9 @@
   "scripts": {
     "build": "tsc",
     "start": "pnpm build && node ./dist/index.js",
+    "workflow:tiktok": "pnpm build && node ./dist/workflows/tiktok_fyp_liker/example.js",
+    "workflow:orchestrator": "pnpm build && node ./dist/workflows/orchestrator/example.js",
+    "workflow:main": "pnpm build && node ./dist/workflows/index.js",
     "format": "prettier --write \"src/**/*.ts\"",
     "format:check": "prettier --check \"src/**/*.ts\"",
     "test": "echo \"Error: no test specified\" && exit 1"
